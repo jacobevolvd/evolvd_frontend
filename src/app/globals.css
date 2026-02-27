@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --font-primary: var(--font-geist-sans);
+  --font-secondary: var(--font-geist-sans);
+}
+
+body {
+  font-family: var(--font-primary), system-ui, sans-serif;
+}
