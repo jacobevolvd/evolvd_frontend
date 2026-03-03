@@ -6,7 +6,7 @@ interface FilterItem {
 }
 
 interface FilterTabsProps {
-  items: FilterItem[];
+  items: (FilterItem | string)[];
   active: string;
   basePath: string;
   paramName: string;
@@ -30,19 +30,23 @@ export default function FilterTabs({
       >
         All
       </Link>
-      {items.map((item) => (
-        <Link
-          key={item.slug.current}
-          href={`${basePath}?${paramName}=${encodeURIComponent(item.slug.current)}`}
-          className={`px-4.5 py-2 border font-secondary text-[13px] font-semibold transition-all ${
-            active === item.slug.current
-              ? "border-primary bg-primary/10 text-primary"
-              : "border-dark/8 bg-transparent text-[#57534E] hover:border-primary/40"
-          }`}
-        >
-          {item.title}
-        </Link>
-      ))}
+      {items.map((item) => {
+        const label = typeof item === "string" ? item : item.title;
+        const value = typeof item === "string" ? item : item.slug.current;
+        return (
+          <Link
+            key={value}
+            href={`${basePath}?${paramName}=${encodeURIComponent(value)}`}
+            className={`px-4.5 py-2 border font-secondary text-[13px] font-semibold transition-all ${
+              active === value
+                ? "border-primary bg-primary/10 text-primary"
+                : "border-dark/8 bg-transparent text-[#57534E] hover:border-primary/40"
+            }`}
+          >
+            {label}
+          </Link>
+        );
+      })}
     </div>
   );
 }
