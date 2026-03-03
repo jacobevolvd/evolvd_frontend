@@ -9,7 +9,7 @@ import {
   categoriesQuery,
 } from "@/src/lib/sanity/queries";
 import { urlFor } from "@/src/lib/sanity/image";
-import type { Post } from "@/src/lib/sanity/types";
+import type { Post, Category } from "@/src/lib/sanity/types";
 import FilterTabs from "@/src/components/FilterTabs";
 
 export default async function BlogPage({
@@ -24,7 +24,7 @@ export default async function BlogPage({
     active === "All"
       ? sanityFetch<Post[]>(postsQuery)
       : sanityFetch<Post[]>(postsByCategoryQuery, { category: active }),
-    sanityFetch<string[]>(categoriesQuery),
+    sanityFetch<Category[]>(categoriesQuery),
   ]);
 
   const featured = posts[0];
@@ -66,9 +66,9 @@ export default async function BlogPage({
                   )}
                   <div className="flex-1 flex flex-col justify-center">
                     <div className="flex gap-2.5 items-center mb-3.5">
-                      {featured.category && (
+                      {featured.category?.title && (
                         <span className="font-secondary text-[10px] font-bold text-primary tracking-[1.5px] uppercase px-2.5 py-0.5 bg-primary/10">
-                          {featured.category}
+                          {featured.category.title}
                         </span>
                       )}
                       <span className="font-secondary text-xs text-dark/35">
@@ -81,6 +81,11 @@ export default async function BlogPage({
                     <h2 className="font-primary text-[26px] font-extrabold text-dark leading-snug tracking-tight mb-3">
                       {featured.title}
                     </h2>
+                    {featured.description && (
+                      <p className="font-secondary text-sm text-dark leading-relaxed mb-3 line-clamp-3">
+                        {featured.description}
+                      </p>
+                    )}
                     <span className="font-secondary text-sm font-bold text-primary">
                       Read article &rarr;
                     </span>
@@ -119,9 +124,9 @@ export default async function BlogPage({
                     )}
                     <div className="p-5.5">
                       <div className="flex gap-2.5 items-center mb-2.5">
-                        {post.category && (
+                        {post.category?.title && (
                           <span className="font-secondary text-[10px] font-bold text-primary tracking-[1.5px] uppercase">
-                            {post.category}
+                            {post.category.title}
                           </span>
                         )}
                         <span className="font-secondary text-xs text-dark/35">
@@ -138,6 +143,11 @@ export default async function BlogPage({
                       <h3 className="font-primary text-lg font-bold text-dark leading-snug">
                         {post.title}
                       </h3>
+                      {post.description && (
+                        <p className="font-secondary text-sm text-dark leading-relaxed mt-2 line-clamp-3">
+                          {post.description}
+                        </p>
+                      )}
                     </div>
                   </article>
                 </Link>

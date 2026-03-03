@@ -22,6 +22,50 @@ const portableTextComponents: PortableTextComponents = {
         />
       );
     },
+    divider: ({ value }) => (
+      <hr
+        className={`my-10 border-0 ${
+          value?.style === "dots"
+            ? "text-center text-2xl tracking-[0.5em] text-gray-400 before:content-['•••']"
+            : "h-px bg-gray-200"
+        }`}
+      />
+    ),
+    codeBlock: ({ value }) => (
+      <div className="my-8 rounded-lg overflow-hidden bg-gray-900 text-gray-100">
+        {value?.filename && (
+          <div className="px-4 py-2 text-xs text-gray-400 bg-gray-800 border-b border-gray-700">
+            {value.filename}
+          </div>
+        )}
+        <pre className="p-4 overflow-x-auto text-sm">
+          <code>{value?.code}</code>
+        </pre>
+      </div>
+    ),
+  },
+  marks: {
+    inlineQuote: ({ children }) => (
+      <q className="font-serif">{children}</q>
+    ),
+  },
+  block: {
+    blockquote: ({ children }) => (
+      <blockquote className="my-8 pl-5 text-lg text-gray-600">
+        <span className="text-4xl leading-none text-primary font-serif">
+          &ldquo;
+        </span>
+        {children}
+        <span className="text-4xl leading-none text-primary font-serif">
+          &rdquo;
+        </span>
+      </blockquote>
+    ),
+    pullQuote: ({ children }) => (
+      <blockquote className="my-10 !border-l-4 !border-primary !pl-5 text-xl italic text-gray-500">
+        {children}
+      </blockquote>
+    ),
   },
 };
 
@@ -39,11 +83,14 @@ export default async function BlogDetailPage({
     <div className="min-h-screen w-full bg-white text-black font-primary">
       <Header />
 
-      <article className="px-8 py-12 md:px-16 max-w-4xl mx-auto">
+      <article className="px-8 mt-20 py-12 md:px-16 max-w-4xl mx-auto">
         {/* Title & Date */}
         <h1 className="text-3xl md:text-4xl font-bold leading-tight">
           {post.title}
         </h1>
+        {post.description && (
+          <p className="mt-3 text-base">{post.description}</p>
+        )}
         <p className="text-sm text-gray-400 mt-2">
           {new Date(post.publishedAt).toLocaleDateString("en-US", {
             year: "numeric",
@@ -68,7 +115,7 @@ export default async function BlogDetailPage({
 
         {/* Body */}
         {post.body && (
-          <div className="mt-10 prose prose-gray max-w-none">
+          <div className="mt-10 prose prose-gray max-w-none prose-blockquote:border-0 prose-blockquote:pl-0">
             <PortableText
               value={post.body}
               components={portableTextComponents}

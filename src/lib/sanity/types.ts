@@ -1,11 +1,17 @@
 import type { PortableTextBlock } from "next-sanity";
 
+export interface Category {
+  title: string;
+  slug: { current: string };
+}
+
 export interface Post {
   _id: string;
   title: string;
+  description?: string;
   slug: { current: string };
   publishedAt: string;
-  category?: string;
+  category?: Category;
   banner?: {
     asset: {
       _ref: string;
