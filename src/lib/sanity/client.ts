@@ -9,9 +9,10 @@ export const client = createClient({
 
 const fetchOptions = {
   next: {
-    revalidate: process.env.NEXT_PUBLIC_SANITY_REVALIDATE
-      ? Number(process.env.NEXT_PUBLIC_SANITY_REVALIDATE)
-      : (false as const),
+    revalidate:
+      process.env.NEXT_PUBLIC_ENV === "production"
+        ? Number(process.env.NEXT_PUBLIC_SANITY_REVALIDATE)
+        : (false as const),
   },
 };
 

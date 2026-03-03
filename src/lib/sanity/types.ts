@@ -5,6 +5,7 @@ export interface Post {
   title: string;
   slug: { current: string };
   publishedAt: string;
+  category?: string;
   banner?: {
     asset: {
       _ref: string;

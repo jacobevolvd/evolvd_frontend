@@ -1,11 +1,58 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+:root {
+  /* Core color tokens */
+  --color-primary: #C84B31;
+  --color-secondary: #2D1B69;
+  --color-light: #FAFAF7;
+  --color-dark: #1C1917;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+
+  /* Fonts */
+  --font-primary: "Work Sans", sans-serif;
+  --font-secondary: "Satoshi", sans-serif;
+}
+
 @theme inline {
-  --font-primary: var(--font-geist-sans);
-  --font-secondary: var(--font-geist-sans);
+  --font-primary: var(--font-primary);
+  --font-secondary: var(--font-secondary);
+
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-light: var(--color-light);
+  --color-dark: var(--color-dark);
 }
 
 body {
-  font-family: var(--font-primary), system-ui, sans-serif;
+  font-family: var(--font-secondary);
+  background: var(--color-light);
+  color: var(--color-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-primary) 15%, transparent);
+}
+
+/* Section label utility */
+.section-label {
+  font-family: var(--font-secondary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::before {
+  content: "";
+  width: 24px;
+  height: 1.5px;
+  background: var(--color-primary);
+  display: inline-block;
 }

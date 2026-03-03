@@ -1,0 +1,175 @@
+import Header from "@/src/components/Header";
+import Footer from "@/src/components/Footer";
+import Link from "next/link";
+import NewsletterSignup from "@/src/components/NewsletterSignup";
+
+const timeline = [
+  {
+    year: "2004-2010",
+    role: "Design Engineer",
+    co: "Schneider Electric",
+    note: "Started in petroleum and industrial IoT",
+  },
+  {
+    year: "2010-2014",
+    role: "Product Designer",
+    co: "Boeing",
+    note: "Aviation systems and safety-critical interfaces",
+  },
+  {
+    year: "2014-2017",
+    role: "Senior Designer",
+    co: "Adobe",
+    note: "Enterprise SaaS at global scale",
+  },
+  {
+    year: "2017-2019",
+    role: "Design Lead",
+    co: "Nike",
+    note: "Retail, fitness wearables, and consumer products",
+  },
+  {
+    year: "2019-2021",
+    role: "Product Design Lead",
+    co: "Grab / Freshworks",
+    note: "Scaling products across Southeast Asia and India",
+  },
+  {
+    year: "2021-2024",
+    role: "Product Design Leader",
+    co: "Microsoft",
+    note: "Enterprise product strategy",
+  },
+  {
+    year: "2024-Now",
+    role: "Founder",
+    co: "ProductOS / FoundrEvolved",
+    note: "Building the platform",
+  },
+];
+
+const socials = ["LinkedIn", "YouTube", "Twitter / X"];
+
+export default function AboutPage() {
+  return (
+    <div className="min-h-screen w-full">
+      <Header />
+
+      <div className="pt-[100px]">
+        <section className="pt-15 pb-25 px-7 bg-light">
+          <div className="max-w-[1100px] mx-auto">
+            {/* Hero */}
+            <div className="flex gap-16 items-start flex-wrap mb-20">
+              {/* Photo placeholder */}
+              <div className="flex-none w-[320px] h-[420px] bg-gradient-to-br from-dark/8 to-[#F2EDE6] flex items-center justify-center font-secondary text-sm text-dark/30 border border-dashed border-dark/10">
+                [Arun&apos;s Photo]
+              </div>
+
+              {/* Bio */}
+              <div className="flex-1 sm:min-w-[400px]">
+                <div className="section-label mb-4">About</div>
+                <h1 className="font-primary text-[clamp(36px,5vw,52px)] font-extrabold text-dark tracking-[-2px] leading-none mb-6">
+                  Arun Jacob
+                </h1>
+                <p className="font-secondary text-base text-[#57534E] leading-[1.75] mb-4">
+                  I&apos;ve spent 20 years designing and shipping products
+                  across some of the most demanding industries in the world:
+                  petroleum, aviation, enterprise SaaS, retail, IoT, fitness
+                  wearables, and ride-hailing. I&apos;ve worked inside companies
+                  like Adobe, Boeing, Nike, Microsoft, Grab, and Freshworks.
+                </p>
+                <p className="font-secondary text-base text-[#57534E] leading-[1.75] mb-4">
+                  The one pattern I&apos;ve seen repeat everywhere: talented
+                  teams building the wrong thing. Not because they lack skill,
+                  but because they lack alignment. That observation became a book
+                  (MisAligned), a framework (the 0-to-1 system), and eventually
+                  this platform: ProductOS.
+                </p>
+                <p className="font-secondary text-base text-[#57534E] leading-[1.75] mb-6">
+                  My mission is simple: help founders, PMs, and designers build
+                  products people actually need. Through writing, frameworks,
+                  community, and eventually structured education.
+                </p>
+                <div className="flex gap-6 flex-wrap">
+                  {socials.map((s) => (
+                    <Link
+                      key={s}
+                      href="#"
+                      className="font-secondary text-sm font-bold text-primary"
+                    >
+                      {s} &#8599;
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Career Timeline */}
+            <div className="mb-20">
+              <div className="section-label mb-4">Career Timeline</div>
+              <h2 className="font-primary text-[28px] font-extrabold text-dark tracking-[-0.5px] mb-8">
+                Two decades of building.
+              </h2>
+              {timeline.map((t, i) => (
+                <div
+                  key={i}
+                  className="py-4.5 border-b border-dark/8 grid grid-cols-[140px_1fr] sm:grid-cols-[140px_1fr_1fr] gap-4 items-center"
+                >
+                  <span className="font-primary text-sm font-bold text-dark/30">
+                    {t.year}
+                  </span>
+                  <div>
+                    <span className="font-primary text-[15px] font-bold text-dark">
+                      {t.role}
+                    </span>
+                    <span className="font-secondary text-sm text-primary ml-2.5">
+                      {t.co}
+                    </span>
+                  </div>
+                  <span className="font-secondary text-sm text-[#57534E] hidden sm:block">
+                    {t.note}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* What is ProductOS */}
+            <div className="p-12 bg-[#F2EDE6] border border-dark/8 mb-10">
+              <div className="section-label mb-4">The Platform</div>
+              <h2 className="font-primary text-[28px] font-extrabold text-dark tracking-[-0.5px] mb-4">
+                What is ProductOS?
+              </h2>
+              <p className="font-secondary text-base text-[#57534E] leading-[1.75] mb-3">
+                ProductOS is everything I&apos;ve learned about building
+                products, packaged into a system anyone can use. It includes a
+                weekly newsletter, a library of frameworks and workbooks (The
+                Vault), a book (MisAligned), a community for builders (The
+                Forge), and soon structured courses.
+              </p>
+              <p className="font-secondary text-base text-[#57534E] leading-[1.75]">
+                The business entity behind it is FoundrEvolved. Think of Arun
+                Jacob as the voice and ProductOS as the toolkit. All roads lead
+                here.
+              </p>
+            </div>
+
+            {/* Newsletter CTA */}
+            <div className="text-center py-12">
+              <h2 className="font-primary text-[28px] font-extrabold text-dark tracking-[-0.5px] mb-3">
+                Stay in the loop.
+              </h2>
+              <p className="font-secondary text-[15px] text-[#57534E] mb-7">
+                One practical product lesson every week. Join 1,200+ builders.
+              </p>
+              <div className="flex justify-center">
+                <NewsletterSignup />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <Footer />
+    </div>
+  );
+}
