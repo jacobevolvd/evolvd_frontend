@@ -2,7 +2,7 @@ import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import { sanityFetch } from "@/src/lib/sanity/client";
+import { sanityFetch } from "@/src/lib/sanity/live";
 import {
   postsQuery,
   postsByCategoryQuery,
@@ -20,12 +20,15 @@ export default async function BlogPage({
   const { category } = await searchParams;
   const active = category || "All";
 
-  const [posts, categories] = await Promise.all([
+  const [postsResult, categoriesResult] = await Promise.all([
     active === "All"
-      ? sanityFetch<Post[]>(postsQuery)
-      : sanityFetch<Post[]>(postsByCategoryQuery, { category: active }),
-    sanityFetch<Category[]>(categoriesQuery),
+      ? sanityFetch({ query: postsQuery })
+      : sanityFetch({ query: postsByCategoryQuery, params: { category: active } }),
+    sanityFetch({ query: categoriesQuery }),
   ]);
+
+  const posts = postsResult.data as Post[];
+  const categories = categoriesResult.data as Category[];
 
   const featured = posts[0];
   const rest = posts.slice(1);

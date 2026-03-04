@@ -3,7 +3,7 @@ import Footer from "@/src/components/Footer";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { PortableText, type PortableTextComponents } from "next-sanity";
-import { sanityFetch } from "@/src/lib/sanity/client";
+import { sanityFetch } from "@/src/lib/sanity/live";
 import { postBySlugQuery } from "@/src/lib/sanity/queries";
 import { urlFor } from "@/src/lib/sanity/image";
 import type { Post } from "@/src/lib/sanity/types";
@@ -75,7 +75,7 @@ export default async function BlogDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await sanityFetch<Post | null>(postBySlugQuery, { slug });
+  const { data: post } = await sanityFetch({ query: postBySlugQuery, params: { slug } }) as { data: Post | null };
 
   if (!post) notFound();
 

@@ -5,6 +5,9 @@ export const client = createClient({
   dataset: process.env.NEXT_PUBLIC_DATASET,
   apiVersion: process.env.NEXT_PUBLIC_API_VERSION,
   useCdn: process.env.NEXT_PUBLIC_USE_CDN === "true",
+  stega: {
+    studioUrl: process.env.NEXT_PUBLIC_SANITY_STUDIO_URL,
+  },
 });
 
 const fetchOptions = {
