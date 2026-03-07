@@ -48,7 +48,7 @@ export default function Header() {
             <Link
               key={link.label}
               href={link.href}
-              className={`font-secondary text-sm font-medium transition-colors hover:text-primary ${
+              className={`font-primary text-sm font-medium transition-colors hover:text-primary tracking-[.02rem] ${
                 pathname.startsWith(link.href)
                   ? "text-primary"
                   : "text-[#57534E]"
@@ -60,7 +60,7 @@ export default function Header() {
 
           <Link
             href="/subscribe"
-            className="font-secondary text-[13px] font-bold text-white bg-primary px-5.5 py-2.5 hover:bg-primary/85 transition-colors"
+            className="font-primary text-[13px] font-bold text-white bg-primary px-5.5 py-2.5 hover:bg-primary/85 transition-colors"
           >
             Subscribe
           </Link>

@@ -1,23 +1,6 @@
 import type { Metadata } from "next";
-import { Work_Sans } from "next/font/google";
-import localFont from "next/font/local";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
-
-const workSans = Work_Sans({
-  variable: "--font-primary",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
-
-const satoshi = localFont({
-  variable: "--font-secondary",
-  src: [
-    { path: "../fonts/Satoshi-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../fonts/Satoshi-Medium.woff2", weight: "500", style: "normal" },
-    { path: "../fonts/Satoshi-Bold.woff2", weight: "700", style: "normal" },
-    { path: "../fonts/Satoshi-Black.woff2", weight: "900", style: "normal" },
-  ],
-});
 
 export const metadata: Metadata = {
   title: "ProductOS — Build Products People Actually Need",
@@ -32,9 +15,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${workSans.variable} ${satoshi.variable} antialiased`}>
-        {children}
-      </body>
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/xln2vhb.css" />
+      </head>
+      <body className={`antialiased`}>{children}</body>
+      {process.env.NEXT_PUBLIC_GA_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+      )}
     </html>
   );
 }

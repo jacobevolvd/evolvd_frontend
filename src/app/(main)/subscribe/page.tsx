@@ -26,8 +26,6 @@ const benefits = [
   },
 ];
 
-const companies = ["Adobe", "Boeing", "Nike", "Grab", "Microsoft"];
-
 const reassurances = [
   { icon: "\u2713", text: "Free forever" },
   { icon: "\u2713", text: "No spam" },
@@ -39,8 +37,9 @@ export default function SubscribePage() {
   const [agreed, setAgreed] = useState(false);
   const [error, setError] = useState("");
   const [focused, setFocused] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
 
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = useCallback(async () => {
     if (!email || !email.includes("@")) {
       setError("Please enter a valid email address.");
       return;
@@ -50,15 +49,36 @@ export default function SubscribePage() {
       return;
     }
     setError("");
-    setEmail("");
-    setAgreed(false);
+    setStatus("loading");
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong.");
+        setStatus("idle");
+        return;
+      }
+
+      setStatus("success");
+      setEmail("");
+      setAgreed(false);
+    } catch {
+      setError("Something went wrong. Please try again.");
+      setStatus("idle");
+    }
   }, [email, agreed]);
 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent) => {
       if (e.key === "Enter") handleSubmit();
     },
-    [handleSubmit]
+    [handleSubmit],
   );
 
   return (
@@ -125,18 +145,6 @@ export default function SubscribePage() {
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Social proof */}
-        <div className="relative flex gap-5 flex-wrap">
-          {companies.map((co) => (
-            <span
-              key={co}
-              className="font-secondary text-[10px] font-semibold text-light/20 tracking-[2px] uppercase"
-            >
-              {co}
-            </span>
-          ))}
         </div>
       </div>
 
@@ -241,10 +249,17 @@ export default function SubscribePage() {
           {/* Submit */}
           <button
             onClick={handleSubmit}
-            className="w-full py-4 bg-primary text-white font-secondary text-[15px] font-bold tracking-wide hover:bg-primary/85 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(200,75,49,0.12)] transition-all cursor-pointer"
+            disabled={status === "loading"}
+            className="w-full py-4 bg-primary text-white font-secondary text-[15px] font-bold tracking-wide hover:bg-primary/85 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(200,75,49,0.12)] transition-all cursor-pointer disabled:opacity-60"
           >
-            Subscribe &rarr;
+            {status === "loading" ? "Subscribing..." : "Subscribe \u2192"}
           </button>
+
+          {status === "success" && (
+            <div className="mt-4 p-4 bg-green-50 border border-green-200 font-secondary text-sm text-green-700 font-medium">
+              You&apos;re in! Check your inbox to confirm your subscription.
+            </div>
+          )}
 
           {/* Reassurance */}
           <div className="mt-7 flex gap-4 flex-wrap">

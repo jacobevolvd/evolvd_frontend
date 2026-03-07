@@ -8,20 +8,21 @@ export default function HeroSection() {
       <div className="absolute -top-[20%] -right-[10%] w-[600px] h-[600px] rounded-full bg-primary/5 pointer-events-none" />
 
       <div className="max-w-[780px] mx-auto relative text-center">
-        <div className="font-secondary text-xs font-bold tracking-[2.5px] uppercase text-primary mb-7">
-          For founders, PMs &amp; designers
+        <div className="font-primary text-xs font-[300] tracking-[2.5px] uppercase text-primary mb-7">
+          FOR PMS, DESIGNERS, FOUNDERS, ENGINEERS &amp; GTM
         </div>
-        <h1 className="font-primary text-[clamp(42px,7vw,74px)] font-extrabold text-dark leading-[1.05] mb-7 tracking-[-2px]">
-          Build Products People{" "}
+        <h1 className="font-primary text-[clamp(42px,7vw,64px)] font-[800] text-dark leading-[1.05] mb-7 tracking-[-2px]">
+          Great products come from teams who{" "}
           <span className="text-primary relative inline-block">
-            Actually
+            think beyond
             <span className="absolute bottom-[-2px] left-0 right-0 h-[3px] bg-primary/25 block" />
           </span>{" "}
-          Need
+          their role
         </h1>
-        <p className="font-secondary text-[clamp(17px,2.2vw,20px)] text-[#57534E] leading-relaxed max-w-[540px] mx-auto mb-10">
-          Every week, one practical lesson from 20 years of shipping products at
-          Adobe, Boeing, Nike, and beyond. No theory. No fluff.
+        <p className="font-secondary text-[clamp(17px,2.2vw,20px)] text-[#57534E] leading-[1.2] max-w-[540px] mx-auto mb-10">
+          Built for everyone who shapes a product, not just the person with
+          "product" in their title. Because great products are never the work of
+          one role.
         </p>
 
         <div className="flex justify-center mb-3">

@@ -3,21 +3,17 @@
 
 :root {
   /* Core color tokens */
-  --color-primary: #C84B31;
-  --color-secondary: #2D1B69;
-  --color-light: #FAFAF7;
-  --color-dark: #1C1917;
+  --color-primary: #c84b31;
+  --color-secondary: #2d1b69;
+  --color-light: #fafaf7;
+  --color-dark: #1c1917;
   --color-black: #000000;
-  --color-white: #FFFFFF;
-
-  /* Fonts */
-  --font-primary: "Work Sans", sans-serif;
-  --font-secondary: "Satoshi", sans-serif;
+  --color-white: #ffffff;
 }
 
 @theme inline {
-  --font-primary: var(--font-primary);
-  --font-secondary: var(--font-secondary);
+  --font-primary: "articulat-cf", sans-serif;
+  --font-secondary: "adobe-jenson-pro", serif;
 
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
@@ -30,6 +26,7 @@ body {
   background: var(--color-light);
   color: var(--color-dark);
   -webkit-font-smoothing: antialiased;
+  line-height: 1.2;
 }
 
 ::selection {

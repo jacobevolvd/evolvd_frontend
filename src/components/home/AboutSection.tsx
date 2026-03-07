@@ -4,9 +4,13 @@ const companies = [
   "Adobe",
   "Boeing",
   "Nike",
-  "Grab",
+  "Paramount",
   "Freshworks",
   "Microsoft",
+  "Motorola",
+  "Schneider Electric",
+  "Levi’s",
+  "Yahoo",
 ];
 
 export default function AboutSection() {
@@ -20,21 +24,20 @@ export default function AboutSection() {
 
         {/* Text content */}
         <div className="flex-1 sm:min-w-[380px]">
-          <div className="section-label mb-4">About Arun Jacob</div>
+          <div className="section-label mb-4 font-primary">
+            About Arun Jacob
+          </div>
           <h2 className="font-primary text-[clamp(28px,4vw,42px)] font-extrabold text-dark leading-[1.1] mb-5 tracking-[-1px]">
             20 years of building products.
             <br />
             Every mistake you can skip.
           </h2>
-          <p className="font-secondary text-base text-[#57534E] leading-relaxed mb-3.5">
-            Product design leader with two decades across petroleum, aviation,
-            SaaS, retail, IoT, and fitness wearables. From Adobe to Boeing, Nike
-            to Grab, I&apos;ve seen what makes products succeed and why they
-            fail.
-          </p>
-          <p className="font-secondary text-base text-[#57534E] leading-relaxed mb-2.5">
-            Now I&apos;m building ProductOS: the system for turning product
-            ideas into products people actually need.
+          <p className="font-secondary text-base text-[#57534E] mb-3.5">
+            Arun Jacob's career never stayed in one world. Retail, SaaS,
+            fintech, fitness wearables, petroleum, aviation, industrial IoT.
+            Every switch felt like starting over. Every switch also taught him
+            something the previous world never could. That cross-industry
+            perspective is exactly what you'll find here.
           </p>
 
           {/* Company strip */}
@@ -53,7 +56,7 @@ export default function AboutSection() {
 
           <Link
             href="/about"
-            className="font-secondary text-sm font-bold text-primary inline-flex items-center gap-2 group"
+            className="font-primary text-sm font-bold text-primary inline-flex items-center gap-2 group"
           >
             Read the full story{" "}
             <span className="group-hover:translate-x-1.5 transition-transform">
