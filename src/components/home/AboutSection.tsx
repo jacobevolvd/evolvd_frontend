@@ -24,9 +24,7 @@ export default function AboutSection() {
 
         {/* Text content */}
         <div className="flex-1 sm:min-w-[380px]">
-          <div className="section-label mb-4 font-primary">
-            About Arun Jacob
-          </div>
+          <div className="section-label mb-4">About Arun Jacob</div>
           <h2 className="font-primary text-[clamp(28px,4vw,42px)] font-extrabold text-dark leading-[1.1] mb-5 tracking-[-1px]">
             20 years of building products.
             <br />
@@ -42,7 +40,7 @@ export default function AboutSection() {
 
           {/* Company strip */}
           <div className="border-t border-dark/8 pt-4.5 mt-6 mb-5">
-            <div className="flex gap-6 flex-wrap">
+            <div className="flex gap-x-6 gap-y-3 flex-wrap">
               {companies.map((co) => (
                 <span
                   key={co}

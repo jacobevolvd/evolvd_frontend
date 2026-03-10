@@ -1,3 +1,5 @@
+import NewsletterSignup from "@/src/components/NewsletterSignup";
+
 const topics = [
   {
     id: 1,
@@ -46,6 +48,21 @@ export default function CoursesSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Early access black section */}
+        <div className="bg-dark text-white rounded-sm border-l-4 border-primary p-8 sm:p-10 mt-10 text-left">
+          <h3 className="font-primary text-[clamp(20px,3vw,26px)] font-bold leading-tight mb-2">
+            Get early access when courses launch.
+          </h3>
+          <p className="font-secondary text-sm text-white/60 mb-6">
+            No spam. Just a heads-up when the doors open.
+          </p>
+          <NewsletterSignup
+            dark
+            buttonText="Reserve My Spot"
+            placeholder="Your email address"
+          />
         </div>
       </div>
     </section>

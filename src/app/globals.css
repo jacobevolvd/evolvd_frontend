@@ -35,7 +35,7 @@ body {
 
 /* Section label utility */
 .section-label {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 2.5px;

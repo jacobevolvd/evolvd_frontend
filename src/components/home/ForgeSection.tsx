@@ -1,3 +1,5 @@
+import NewsletterSignup from "@/src/components/NewsletterSignup";
+
 const roles = [
   { emoji: "\uD83D\uDE80", label: "Founders", desc: "Building from zero to one" },
   { emoji: "\uD83C\uDFAF", label: "Product Managers", desc: "Shipping what matters" },
@@ -49,14 +51,27 @@ export default function ForgeSection() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="text-center">
-          <a
-            href="#"
-            className="inline-block px-7.5 py-3.5 bg-primary text-white font-secondary text-sm font-bold hover:bg-primary/85 transition-colors"
-          >
-            Join The Forge (Free)
-          </a>
+        {/* Founding members section */}
+        <div className="border-t-2 border-primary bg-white/3 p-8 sm:p-10 mt-4">
+          <div className="inline-block px-3 py-1 bg-primary/15 font-secondary text-[11px] font-bold text-primary tracking-widest uppercase mb-4">
+            Founding Members
+          </div>
+          <h3 className="font-primary text-[clamp(20px,3vw,26px)] font-bold text-light leading-tight mb-2">
+            The Forge is being built deliberately.
+          </h3>
+          <p className="font-secondary text-sm text-light/50 leading-relaxed max-w-[580px] mb-6">
+            Small, curated, and intentional. Not another noisy Slack group. When
+            it opens, founding members get in first, shape the culture, and set
+            the standard. Get on the list now.
+          </p>
+          <NewsletterSignup
+            dark
+            buttonText="Apply for Early Access"
+            placeholder="Your email address"
+          />
+          <p className="font-secondary text-xs text-light/30 mt-3">
+            No spam. First to know when the doors open.
+          </p>
         </div>
       </div>
     </section>

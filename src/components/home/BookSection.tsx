@@ -14,9 +14,9 @@ export default function BookSection() {
             Finding the Missing Link Between Smart Teams and Successful Products
           </p>
           <p className="font-secondary text-base text-[#57534E] leading-relaxed mb-8">
-            Why do talented teams still ship products nobody wants? This book
-            dissects the alignment failures that kill great products and gives
-            you the frameworks to prevent them.
+            The gap between a great team and a great product isn't talent. It's
+            alignment. This book is about what that gap looks like in the real
+            world and how to close it, whatever your role.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
@@ -29,7 +29,7 @@ export default function BookSection() {
               href="/book#preview"
               className="px-6.5 py-3.5 bg-transparent text-secondary font-secondary text-sm font-bold border-[1.5px] border-secondary/20 hover:border-secondary transition-colors"
             >
-              Read 3 Free Chapters
+              Read Free Chapters
             </Link>
           </div>
         </div>

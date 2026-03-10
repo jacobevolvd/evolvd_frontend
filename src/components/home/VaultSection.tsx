@@ -1,4 +1,5 @@
 import Link from "next/link";
+import NewsletterSignup from "@/src/components/NewsletterSignup";
 
 const items = [
   {
@@ -35,13 +36,10 @@ export default function VaultSection() {
         <div className="text-center mb-14">
           <div className="section-label justify-center mb-4">The Vault</div>
           <h2 className="font-primary text-[clamp(28px,4vw,42px)] font-extrabold text-dark leading-[1.1] tracking-[-1px] mb-3.5">
-            Built from real product experience,
-            <br />
-            not textbook theory
+            Tools built from 20 years of shipping. Not a textbook in sight.
           </h2>
           <p className="font-secondary text-base text-[#57534E] leading-relaxed max-w-[520px] mx-auto">
-            Everything here comes from 20 years of shipping. Free to download.
-            Some require an email. None require a credit card.
+            Free to use. Some require an email. None require a credit card.
           </p>
         </div>
 
@@ -64,6 +62,31 @@ export default function VaultSection() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Coming soon black section */}
+        <div className="bg-dark text-white rounded-sm border-l-4 border-primary p-8 sm:p-10 mt-8">
+          <h3 className="font-primary text-[clamp(20px,3vw,26px)] font-bold leading-tight mb-2">
+            Workbooks, templates, and cheat sheets are on the way.
+          </h3>
+          <p className="font-secondary text-sm text-white/60 mb-5">
+            Want to know when they drop?
+          </p>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {["Workbooks", "Templates", "Cheat Sheets"].map((tag) => (
+              <span
+                key={tag}
+                className="font-secondary text-[11px] font-bold tracking-widest uppercase bg-white/10 text-white/70 px-3 py-1.5"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <NewsletterSignup
+            dark
+            buttonText="Notify Me"
+            placeholder="Your email address"
+          />
         </div>
 
         <div className="text-center mt-9">
