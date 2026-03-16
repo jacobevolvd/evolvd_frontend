@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Blog", href: "/blog" },
-  { label: "Vault", href: "/vault" },
+  // { label: "Vault", href: "/vault" },
   { label: "Book", href: "/book" },
   { label: "Speaking", href: "/speaking" },
   { label: "About", href: "/about" },
@@ -38,7 +38,7 @@ export default function Header() {
             Product
           </span>
           <span className="font-primary text-xl font-extrabold text-primary tracking-tight">
-            OS
+            Native
           </span>
         </Link>
 
@@ -60,7 +60,7 @@ export default function Header() {
 
           <Link
             href="/subscribe"
-            className="font-primary text-[13px] font-bold text-white bg-primary px-5.5 py-2.5 hover:bg-primary/85 transition-colors"
+            className="font-primary text-sm font-bold text-white bg-primary px-5.5 py-2.5 hover:bg-primary/85 transition-colors"
           >
             Subscribe
           </Link>
@@ -109,7 +109,7 @@ export default function Header() {
           ))}
           <Link
             href="#subscribe"
-            className="font-secondary text-[13px] font-bold text-white bg-primary px-5 py-2.5 text-center hover:bg-primary/85 transition-colors"
+            className="font-secondary text-sm font-bold text-white bg-primary px-5 py-2.5 text-center hover:bg-primary/85 transition-colors"
             onClick={() => setMobileOpen(false)}
           >
             Subscribe

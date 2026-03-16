@@ -22,7 +22,7 @@ export default function CoursesSection() {
   return (
     <section className="py-28 bg-light px-7">
       <div className="max-w-[680px] mx-auto text-center">
-        <div className="inline-block px-4 py-1.5 bg-primary/10 font-secondary text-[11px] font-bold text-primary tracking-widest uppercase mb-5">
+        <div className="inline-block px-4 py-1.5 bg-primary/10 font-secondary text-sm font-bold text-primary tracking-widest uppercase mb-5">
           Coming 2027
         </div>
         <h2 className="font-primary text-[clamp(28px,4vw,42px)] font-extrabold text-dark leading-[1.1] tracking-[-1px] mb-3.5">
@@ -43,7 +43,7 @@ export default function CoursesSection() {
               <div className="font-primary text-[15px] font-bold text-dark">
                 {topic.title}
               </div>
-              <div className="font-secondary text-[13px] text-[#57534E] mt-0.5">
+              <div className="font-secondary text-sm text-[#57534E] mt-0.5">
                 {topic.desc}
               </div>
             </div>

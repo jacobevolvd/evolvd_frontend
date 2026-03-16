@@ -22,7 +22,7 @@ export default function FilterTabs({
     <div className="flex gap-2 mb-10 flex-wrap">
       <Link
         href={basePath}
-        className={`px-4.5 py-2 border font-secondary text-[13px] font-semibold transition-all ${
+        className={`px-4.5 py-2 border font-secondary text-sm font-semibold transition-all ${
           active === "All"
             ? "border-primary bg-primary/10 text-primary"
             : "border-dark/8 bg-transparent text-[#57534E] hover:border-primary/40"
@@ -37,7 +37,7 @@ export default function FilterTabs({
           <Link
             key={value}
             href={`${basePath}?${paramName}=${encodeURIComponent(value)}`}
-            className={`px-4.5 py-2 border font-secondary text-[13px] font-semibold transition-all ${
+            className={`px-4.5 py-2 border font-secondary text-sm font-semibold transition-all ${
               active === value
                 ? "border-primary bg-primary/10 text-primary"
                 : "border-dark/8 bg-transparent text-[#57534E] hover:border-primary/40"

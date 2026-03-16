@@ -42,7 +42,7 @@ export default function ToolsPage() {
           {frameworks.map((item) => (
             <Link href={`/tools/${item.slug}`} key={item.slug} className="group">
               <div className="aspect-square bg-gray-100 rounded-2xl" />
-              <p className="text-xs text-gray-400 mt-4">{item.category}</p>
+              <p className="text-sm text-gray-400 mt-4">{item.category}</p>
               <h2 className="text-sm font-bold mt-1 group-hover:underline">
                 {item.title}
               </h2>
@@ -61,7 +61,7 @@ export default function ToolsPage() {
               <h3 className="text-sm font-bold mt-4 group-hover:underline">
                 {item.title}
               </h3>
-              <p className="text-xs text-gray-400 mt-1">{item.description}</p>
+              <p className="text-sm text-gray-400 mt-1">{item.description}</p>
             </Link>
           ))}
         </div>

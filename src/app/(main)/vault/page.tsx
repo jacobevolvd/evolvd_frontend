@@ -112,11 +112,11 @@ export default async function VaultPage({
                 >
                   {/* Type + status */}
                   <div className="flex justify-between items-start mb-3">
-                    <span className="font-secondary text-[10px] font-bold text-primary tracking-[1.5px] uppercase">
+                    <span className="font-secondary text-sm font-bold text-primary tracking-[1.5px] uppercase">
                       {r.type}
                     </span>
                     <span
-                      className={`font-secondary text-[10px] font-bold tracking-[1px] uppercase px-2.5 py-0.5 border ${
+                      className={`font-secondary text-sm font-bold tracking-[1px] uppercase px-2.5 py-0.5 border ${
                         r.status === "Coming Soon"
                           ? "text-dark/30 border-dark/8"
                           : r.gated
@@ -138,7 +138,7 @@ export default async function VaultPage({
 
                   {/* Action */}
                   <span
-                    className={`font-secondary text-[13px] font-bold ${
+                    className={`font-secondary text-sm font-bold ${
                       r.status === "Coming Soon"
                         ? "text-dark/30"
                         : "text-primary"

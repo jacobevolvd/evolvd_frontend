@@ -54,7 +54,7 @@ export default function VaultSection() {
               <h3 className="font-primary text-[17px] font-bold text-dark mb-1">
                 {item.type}
               </h3>
-              <span className="font-secondary text-[11px] font-bold text-primary tracking-widest uppercase block mb-2.5">
+              <span className="font-secondary text-sm font-bold text-primary tracking-widest uppercase block mb-2.5">
                 {item.count}
               </span>
               <p className="font-secondary text-sm text-[#57534E] leading-relaxed">
@@ -76,7 +76,7 @@ export default function VaultSection() {
             {["Workbooks", "Templates", "Cheat Sheets"].map((tag) => (
               <span
                 key={tag}
-                className="font-secondary text-[11px] font-bold tracking-widest uppercase bg-white/10 text-white/70 px-3 py-1.5"
+                className="font-secondary text-sm font-bold tracking-widest uppercase bg-white/10 text-white/70 px-3 py-1.5"
               >
                 {tag}
               </span>

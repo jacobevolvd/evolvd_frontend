@@ -63,18 +63,18 @@ export default async function BlogPage({
                       className="flex-none w-full md:w-[360px] h-[240px] object-cover"
                     />
                   ) : (
-                    <div className="flex-none w-full md:w-[360px] h-[240px] bg-gradient-to-br from-[#F2EDE6] to-dark/8 flex items-center justify-center font-secondary text-[13px] text-dark/35">
+                    <div className="flex-none w-full md:w-[360px] h-[240px] bg-gradient-to-br from-[#F2EDE6] to-dark/8 flex items-center justify-center font-secondary text-sm text-dark/35">
                       [Featured Image]
                     </div>
                   )}
                   <div className="flex-1 flex flex-col justify-center">
                     <div className="flex gap-2.5 items-center mb-3.5">
                       {featured.category?.title && (
-                        <span className="font-secondary text-[10px] font-bold text-primary tracking-[1.5px] uppercase px-2.5 py-0.5 bg-primary/10">
+                        <span className="font-secondary text-sm font-bold text-primary tracking-[1.5px] uppercase px-2.5 py-0.5 bg-primary/10">
                           {featured.category.title}
                         </span>
                       )}
-                      <span className="font-secondary text-xs text-dark/35">
+                      <span className="font-secondary text-sm text-dark/35">
                         {new Date(featured.publishedAt).toLocaleDateString(
                           "en-US",
                           { year: "numeric", month: "short", day: "numeric" }
@@ -128,11 +128,11 @@ export default async function BlogPage({
                     <div className="p-5.5">
                       <div className="flex gap-2.5 items-center mb-2.5">
                         {post.category?.title && (
-                          <span className="font-secondary text-[10px] font-bold text-primary tracking-[1.5px] uppercase">
+                          <span className="font-secondary text-sm font-bold text-primary tracking-[1.5px] uppercase">
                             {post.category.title}
                           </span>
                         )}
-                        <span className="font-secondary text-xs text-dark/35">
+                        <span className="font-secondary text-sm text-dark/35">
                           {new Date(post.publishedAt).toLocaleDateString(
                             "en-US",
                             {

@@ -44,7 +44,7 @@ export default function ForgeSection() {
               <div className="font-primary text-base font-bold text-light mb-0.5">
                 {r.label}
               </div>
-              <div className="font-secondary text-[13px] text-light/30">
+              <div className="font-secondary text-sm text-light/30">
                 {r.desc}
               </div>
             </div>
@@ -53,7 +53,7 @@ export default function ForgeSection() {
 
         {/* Founding members section */}
         <div className="border-t-2 border-primary bg-white/3 p-8 sm:p-10 mt-4">
-          <div className="inline-block px-3 py-1 bg-primary/15 font-secondary text-[11px] font-bold text-primary tracking-widest uppercase mb-4">
+          <div className="inline-block px-3 py-1 bg-primary/15 font-secondary text-sm font-bold text-primary tracking-widest uppercase mb-4">
             Founding Members
           </div>
           <h3 className="font-primary text-[clamp(20px,3vw,26px)] font-bold text-light leading-tight mb-2">
@@ -69,7 +69,7 @@ export default function ForgeSection() {
             buttonText="Apply for Early Access"
             placeholder="Your email address"
           />
-          <p className="font-secondary text-xs text-light/30 mt-3">
+          <p className="font-secondary text-sm text-light/30 mt-3">
             No spam. First to know when the doors open.
           </p>
         </div>

@@ -17,9 +17,9 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <BookSection />
-        <VaultSection />
-        <CoursesSection />
-        <ForgeSection />
+        {/* <VaultSection /> */}
+        {/* <CoursesSection /> */}
+        {/* <ForgeSection /> */}
         <ArticlesSection />
         <FinalCTASection />
       </main>

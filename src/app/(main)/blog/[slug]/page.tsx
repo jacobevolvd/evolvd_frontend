@@ -34,7 +34,7 @@ const portableTextComponents: PortableTextComponents = {
     codeBlock: ({ value }) => (
       <div className="my-8 rounded-lg overflow-hidden bg-gray-900 text-gray-100">
         {value?.filename && (
-          <div className="px-4 py-2 text-xs text-gray-400 bg-gray-800 border-b border-gray-700">
+          <div className="px-4 py-2 text-sm text-gray-400 bg-gray-800 border-b border-gray-700">
             {value.filename}
           </div>
         )}
