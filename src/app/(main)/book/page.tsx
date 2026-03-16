@@ -39,9 +39,9 @@ export default function BookPage() {
           <div className="absolute inset-0 bg-light/85" />
           <div className="relative max-w-[1100px] mx-auto flex gap-16 items-start flex-wrap">
             {/* Book cover */}
-            <div className="relative flex-none w-[280px] h-[400px] shadow-[20px_20px_60px_rgba(0,0,0,0.2)]">
+            <div className="relative flex-none w-[420px] h-[400px] ">
               <Image
-                src="/book_front.jpg"
+                src="/book.png"
                 alt="MisAligned Book Cover"
                 fill
                 className="object-cover"

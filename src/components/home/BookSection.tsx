@@ -38,7 +38,7 @@ export default function BookSection() {
         {/* Book cover */}
         <div className="relative w-full aspect-square max-w-[400px] md:max-w-none">
           <Image
-            src="/book_front.jpg"
+            src="/book.png"
             alt="MisAligned Book Cover"
             fill
             className="object-contain"
