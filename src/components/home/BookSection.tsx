@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function BookSection() {
   return (
     <section className="py-28 bg-light px-7">
-      <div className="max-w-[1100px] mx-auto flex flex-wrap gap-16 items-center">
+      <div className="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         {/* Book info */}
-        <div className="flex-1 sm:min-w-[400px]">
+        <div>
           <div className="section-label mb-4">The Book</div>
           <h2 className="font-primary text-[clamp(32px,5vw,50px)] font-extrabold text-dark leading-[1.05] tracking-[-1.5px] mb-2">
             MisAligned
@@ -34,14 +35,14 @@ export default function BookSection() {
           </div>
         </div>
 
-        {/* Book cover placeholder */}
-        <div className="flex-none w-[240px] h-[340px] bg-dark flex flex-col items-center justify-center shadow-[20px_20px_60px_rgba(0,0,0,0.18)]">
-          <span className="font-primary text-[26px] font-extrabold text-light">
-            MisAligned
-          </span>
-          <span className="font-secondary text-[11px] text-dark/40 mt-1.5">
-            [Book Cover]
-          </span>
+        {/* Book cover */}
+        <div className="relative w-full aspect-square max-w-[400px] md:max-w-none">
+          <Image
+            src="/book_front.jpg"
+            alt="MisAligned Book Cover"
+            fill
+            className="object-contain"
+          />
         </div>
       </div>
     </section>

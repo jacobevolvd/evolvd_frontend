@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const companies = [
   "Adobe",
@@ -17,9 +18,14 @@ export default function AboutSection() {
   return (
     <section className="py-28 bg-[#F2EDE6] px-7">
       <div className="max-w-[1100px] mx-auto flex flex-wrap gap-16 items-center">
-        {/* Photo placeholder */}
-        <div className="flex-none w-[280px] h-[350px] bg-gradient-to-br from-dark/8 to-light flex items-center justify-center font-secondary text-sm text-dark/35 border border-dashed border-dark/10">
-          [Arun&apos;s Photo]
+        {/* Photo */}
+        <div className="relative flex-none w-[280px] h-[350px]">
+          <Image
+            src="/arun_1.avif"
+            alt="Arun Jacob"
+            fill
+            className="object-cover"
+          />
         </div>
 
         {/* Text content */}
@@ -44,7 +50,7 @@ export default function AboutSection() {
               {companies.map((co) => (
                 <span
                   key={co}
-                  className="font-primary text-[11px] font-bold text-dark/30 tracking-widest uppercase"
+                  className="font-primary text-sm font-bold text-dark/30 tracking-widest uppercase"
                 >
                   {co}
                 </span>
