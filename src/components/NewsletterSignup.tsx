@@ -1,11 +1,37 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter, usePathname } from "next/navigation";
 
 interface NewsletterSignupProps {
   dark?: boolean;
   buttonText?: string;
   placeholder?: string;
+}
+
+export function SuccessPopup({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+      <div className="absolute inset-0 bg-dark/50" />
+      <div className="relative bg-white p-8 max-w-[400px] w-full text-center shadow-[0_24px_64px_rgba(0,0,0,0.15)] rounded-xl">
+        <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center text-2xl font-bold bg-primary/10 text-primary">
+          &#10003;
+        </div>
+        <h3 className="font-primary text-xl font-bold text-dark mb-2">
+          You&apos;re in!
+        </h3>
+        <p className="font-secondary text-sm text-[#57534E] leading-relaxed mb-6">
+          Check your inbox to confirm your subscription.
+        </p>
+        <button
+          onClick={onClose}
+          className="px-7 py-3 bg-primary text-white font-primary text-sm font-bold hover:bg-primary/85 transition-colors cursor-pointer"
+        >
+          Got it
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export default function NewsletterSignup({
@@ -19,6 +45,8 @@ export default function NewsletterSignup({
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const router = useRouter();
+  const pathname = usePathname();
 
   const handleSubmit = async () => {
     if (!email || !email.includes("@")) {
@@ -50,22 +78,17 @@ export default function NewsletterSignup({
     }
   };
 
-  if (status === "success") {
-    return (
-      <div
-        className={`max-w-[480px] w-full px-5 py-3.5 border-[1.5px] ${dark ? "border-white/10 bg-white/4" : "border-dark/10 bg-white"}`}
-      >
-        <p
-          className={`font-secondary text-sm font-medium ${dark ? "text-light" : "text-dark"}`}
-        >
-          You&apos;re in! Check your inbox to confirm.
-        </p>
-      </div>
-    );
-  }
+  const handlePopupClose = () => {
+    if (pathname === "/subscribe") {
+      router.push("/");
+    } else {
+      setStatus("idle");
+    }
+  };
 
   return (
     <div>
+      {status === "success" && <SuccessPopup onClose={handlePopupClose} />}
       <div
         className={`flex flex-col sm:flex-row max-w-[480px] w-full border-[1.5px] transition-colors ${
           focused
@@ -95,14 +118,14 @@ export default function NewsletterSignup({
         <button
           onClick={handleSubmit}
           disabled={status === "loading"}
-          className="px-6 py-3.5 bg-primary text-white font-primary text-[13px] font-bold whitespace-nowrap hover:bg-primary/85 transition-colors cursor-pointer disabled:opacity-60"
+          className="px-6 py-3.5 bg-primary text-white font-primary text-sm font-bold whitespace-nowrap hover:bg-primary/85 transition-colors cursor-pointer disabled:opacity-60"
         >
           {status === "loading" ? "Subscribing..." : buttonText}
         </button>
       </div>
       {status === "error" && (
         <p
-          className={`mt-2 font-secondary text-xs font-medium ${dark ? "text-red-400" : "text-red-500"}`}
+          className={`mt-2 font-secondary text-sm font-medium ${dark ? "text-red-400" : "text-red-500"}`}
         >
           {errorMsg}
         </p>
