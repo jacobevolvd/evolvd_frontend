@@ -1,5 +1,6 @@
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
+import Image from "next/image";
 
 const topics = [
   {
@@ -37,19 +38,31 @@ export default function SpeakingPage() {
       <Header />
 
       <div className="pt-[100px]">
-        <section className="pt-15 pb-25 px-7 bg-light">
-          <div className="max-w-[1100px] mx-auto">
-            {/* Header */}
+        {/* Header */}
+        <section className="relative min-h-screen flex items-center px-7">
+          <Image
+            src="/arun_3.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-dark/75" />
+          <div className="relative max-w-[1100px] mx-auto w-full">
             <div className="section-label mb-4">Speaking</div>
-            <h1 className="font-primary text-[clamp(36px,5vw,56px)] font-extrabold text-dark tracking-[-2px] mb-3">
+            <h1 className="font-primary text-[clamp(36px,5vw,56px)] font-extrabold text-light tracking-[-2px] mb-3">
               Let&apos;s talk product.
             </h1>
-            <p className="font-secondary text-[17px] text-[#57534E] leading-relaxed max-w-[520px] mb-14">
+            <p className="font-secondary text-[17px] text-light/60 leading-relaxed max-w-[520px]">
               Keynotes, panels, workshops, and fireside chats on product
               strategy, design leadership, and building things that matter.
               Available for in-person and virtual events.
             </p>
+          </div>
+        </section>
 
+        <section className="py-25 px-7 bg-light">
+          <div className="max-w-[1100px] mx-auto">
             {/* Talk Topics */}
             <h2 className="font-primary text-2xl font-extrabold text-dark tracking-[-0.5px] mb-6">
               Talk Topics
@@ -64,7 +77,7 @@ export default function SpeakingPage() {
                     <h3 className="font-primary text-lg font-bold text-dark">
                       {t.title}
                     </h3>
-                    <span className="font-secondary text-[11px] font-semibold text-dark/30 tracking-wide whitespace-nowrap ml-4">
+                    <span className="font-secondary text-sm font-semibold text-dark/30 tracking-wide whitespace-nowrap ml-4">
                       {t.duration}
                     </span>
                   </div>
@@ -89,7 +102,7 @@ export default function SpeakingPage() {
                     <span className="font-primary text-base font-bold text-dark">
                       {e.event}
                     </span>
-                    <span className="font-secondary text-xs font-semibold text-primary tracking-[1px] uppercase">
+                    <span className="font-secondary text-sm font-semibold text-primary tracking-[1px] uppercase">
                       {e.type}
                     </span>
                   </div>

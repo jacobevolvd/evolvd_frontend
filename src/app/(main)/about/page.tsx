@@ -1,6 +1,7 @@
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import NewsletterSignup from "@/src/components/NewsletterSignup";
 
 const timeline = [
@@ -48,7 +49,10 @@ const timeline = [
   },
 ];
 
-const socials = ["LinkedIn", "YouTube", "Twitter / X"];
+const socials = [
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/arunjacobk/" },
+  { name: "Twitter / X", url: "https://x.com/arunjacob" },
+];
 
 export default function AboutPage() {
   return (
@@ -56,13 +60,26 @@ export default function AboutPage() {
       <Header />
 
       <div className="pt-[100px]">
+        {/* Hero / About */}
         <section className="pt-15 pb-25 px-7 bg-light">
           <div className="max-w-[1100px] mx-auto">
-            {/* Hero */}
-            <div className="flex gap-16 items-start flex-wrap mb-20">
-              {/* Photo placeholder */}
-              <div className="flex-none w-[320px] h-[420px] bg-gradient-to-br from-dark/8 to-[#F2EDE6] flex items-center justify-center font-secondary text-sm text-dark/30 border border-dashed border-dark/10">
-                [Arun&apos;s Photo]
+            <div className="flex gap-16 items-start flex-wrap">
+              {/* Photo */}
+              <div
+                className="relative flex-none w-[320px] h-[420px]"
+                style={{
+                  maskImage:
+                    "linear-gradient(to bottom, black 60%, transparent 100%), linear-gradient(to right, black 60%, transparent 100%)",
+                  maskComposite: "intersect",
+                  WebkitMaskComposite: "source-in",
+                }}
+              >
+                <Image
+                  src="/arun_2.jpg"
+                  alt="Arun Jacob"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               {/* Bio */}
@@ -81,9 +98,9 @@ export default function AboutPage() {
                 <p className="font-secondary text-base text-[#57534E] leading-[1.75] mb-4">
                   The one pattern I&apos;ve seen repeat everywhere: talented
                   teams building the wrong thing. Not because they lack skill,
-                  but because they lack alignment. That observation became a book
-                  (MisAligned), a framework (the 0-to-1 system), and eventually
-                  this platform: ProductOS.
+                  but because they lack alignment. That observation became a
+                  book (MisAligned), a framework (the 0-to-1 system), and
+                  eventually this platform: ProductOS.
                 </p>
                 <p className="font-secondary text-base text-[#57534E] leading-[1.75] mb-6">
                   My mission is simple: help founders, PMs, and designers build
@@ -93,17 +110,23 @@ export default function AboutPage() {
                 <div className="flex gap-6 flex-wrap">
                   {socials.map((s) => (
                     <Link
-                      key={s}
-                      href="#"
+                      key={s.name}
+                      href={s.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="font-secondary text-sm font-bold text-primary"
                     >
-                      {s} &#8599;
+                      {s.name} &#8599;
                     </Link>
                   ))}
                 </div>
               </div>
             </div>
+          </div>
+        </section>
 
+        <section className="py-25 px-7 bg-light">
+          <div className="max-w-[1100px] mx-auto">
             {/* Career Timeline */}
             <div className="mb-20">
               <div className="section-label mb-4">Career Timeline</div>

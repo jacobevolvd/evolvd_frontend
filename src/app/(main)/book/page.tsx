@@ -1,6 +1,7 @@
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 
 const chapters = [
   "The Alignment Illusion",
@@ -27,16 +28,24 @@ export default function BookPage() {
 
       <div className="pt-[100px]">
         {/* Hero */}
-        <section className="pt-15 pb-25 px-7 bg-light">
-          <div className="max-w-[1100px] mx-auto flex gap-16 items-start flex-wrap">
+        <section className="relative pt-15 pb-25 px-7">
+          <Image
+            src="/book_1.avif"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-light/85" />
+          <div className="relative max-w-[1100px] mx-auto flex gap-16 items-start flex-wrap">
             {/* Book cover */}
-            <div className="flex-none w-[280px] h-[400px] bg-dark flex flex-col items-center justify-center shadow-[20px_20px_60px_rgba(0,0,0,0.2)]">
-              <span className="font-primary text-[28px] font-extrabold text-light">
-                MisAligned
-              </span>
-              <span className="font-secondary text-[11px] text-dark/40 mt-2">
-                [Book Cover]
-              </span>
+            <div className="relative flex-none w-[280px] h-[400px] shadow-[20px_20px_60px_rgba(0,0,0,0.2)]">
+              <Image
+                src="/book_front.jpg"
+                alt="MisAligned Book Cover"
+                fill
+                className="object-cover"
+              />
             </div>
 
             {/* Text */}
@@ -51,8 +60,8 @@ export default function BookPage() {
               </p>
               <p className="font-secondary text-base text-[#57534E] leading-relaxed mb-4">
                 Why do talented teams still ship products nobody wants? After 20
-                years watching brilliant people fail at building the right thing,
-                I wrote the book I wish someone had handed me on day one.
+                years watching brilliant people fail at building the right
+                thing, I wrote the book I wish someone had handed me on day one.
               </p>
               <p className="font-secondary text-base text-[#57534E] leading-relaxed mb-8">
                 MisAligned gives you a diagnostic framework for the three types
@@ -78,8 +87,10 @@ export default function BookPage() {
         </section>
 
         {/* Chapters */}
-        <section className="py-25 px-7 bg-[#F2EDE6]">
-          <div className="max-w-[700px] mx-auto">
+        <section className="relative py-25 px-7">
+          <Image src="/book_2.avif" alt="" fill className="object-cover" />
+          <div className="absolute inset-0 bg-[#F2EDE6]/85" />
+          <div className="relative max-w-[700px] mx-auto">
             <div className="section-label mb-4">Inside the Book</div>
             <h2 className="font-primary text-[32px] font-extrabold text-dark tracking-[-1px] mb-9">
               8 Chapters. Zero filler.
