@@ -7,6 +7,10 @@ import { sanityFetch } from "@/src/lib/sanity/live";
 import { postBySlugQuery } from "@/src/lib/sanity/queries";
 import { urlFor } from "@/src/lib/sanity/image";
 import type { Post } from "@/src/lib/sanity/types";
+import { Suspense } from "react";
+import InlineAd from "@/src/components/InlineAd";
+import NewsletterSignup from "@/src/components/NewsletterSignup";
+import RelatedPosts from "@/src/components/RelatedPosts";
 
 const portableTextComponents: PortableTextComponents = {
   types: {
@@ -114,15 +118,57 @@ export default async function BlogDetailPage({
         )}
 
         {/* Body */}
-        {post.body && (
-          <div className="mt-10 prose prose-gray max-w-none prose-blockquote:border-0 prose-blockquote:pl-0">
-            <PortableText
-              value={post.body}
-              components={portableTextComponents}
-            />
-          </div>
-        )}
+        {post.body && (() => {
+          const mid = Math.floor(post.body.length / 2);
+          const firstHalf = post.body.slice(0, mid);
+          const secondHalf = post.body.slice(mid);
+          return (
+            <div className="mt-10 prose prose-gray max-w-none prose-blockquote:border-0 prose-blockquote:pl-0">
+              <PortableText
+                value={firstHalf}
+                components={portableTextComponents}
+              />
+              {post.inlineAd && (
+                <InlineAd
+                  title={post.inlineAd.title}
+                  description={post.inlineAd.description}
+                  href={post.inlineAd.link}
+                />
+              )}
+              <PortableText
+                value={secondHalf}
+                components={portableTextComponents}
+              />
+            </div>
+          );
+        })()}
       </article>
+
+      {/* Subscribe Banner */}
+      <section className="px-8 md:px-16 max-w-4xl mx-auto mb-20">
+        <div className="p-10 bg-[#F2EDE6] border border-dark/8 text-center">
+          <div className="section-label justify-center mb-4">Stay in the loop</div>
+          <h2 className="font-primary text-[28px] font-extrabold text-dark tracking-[-0.5px] mb-3">
+            Enjoyed this article?
+          </h2>
+          <p className="font-secondary text-[15px] text-[#57534E] leading-relaxed max-w-[400px] mx-auto mb-7">
+            Get one practical product lesson every week. Join 1,200+ founders, PMs, and designers.
+          </p>
+          <div className="flex justify-center">
+            <NewsletterSignup />
+          </div>
+        </div>
+      </section>
+
+      {/* Related Posts */}
+      {post.category?.slug?.current && (
+        <Suspense>
+          <RelatedPosts
+            category={post.category.slug.current}
+            slug={slug}
+          />
+        </Suspense>
+      )}
 
       <Footer />
     </div>
