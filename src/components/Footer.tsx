@@ -15,7 +15,7 @@ const footerColumns = {
   Connect: [
     { label: "About Arun", href: "/about" },
     { label: "Speaking", href: "/speaking" },
-    { label: "Contact", href: "/about" },
+    // { label: "Contact", href: "/about" },
   ],
 };
 

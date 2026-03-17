@@ -6,45 +6,48 @@ import NewsletterSignup from "@/src/components/NewsletterSignup";
 
 const timeline = [
   {
-    year: "2004-2010",
-    role: "Design Engineer",
-    co: "Schneider Electric",
+    role: "Leading product design for AI-powered workflows",
+    co: "Rapidflare.ai",
     note: "Started in petroleum and industrial IoT",
   },
   {
-    year: "2010-2014",
-    role: "Product Designer",
-    co: "Boeing",
+    role: "Drove product-led growth initiatives for CRM",
+    co: "Freshworks Inc",
     note: "Aviation systems and safety-critical interfaces",
   },
   {
-    year: "2014-2017",
-    role: "Senior Designer",
+    role: "Shaped the Creative Cloud desktop experience",
     co: "Adobe",
     note: "Enterprise SaaS at global scale",
   },
   {
-    year: "2017-2019",
-    role: "Design Lead",
-    co: "Nike",
+    role: "Built products across Microsoft's ecosystem",
+    co: "Microsoft",
     note: "Retail, fitness wearables, and consumer products",
   },
   {
-    year: "2019-2021",
-    role: "Product Design Lead",
-    co: "Grab / Freshworks",
+    role: "Reduced workflow complexity by 74%",
+    co: "Avigilon (Motorola company)",
     note: "Scaling products across Southeast Asia and India",
   },
   {
-    year: "2021-2024",
-    role: "Product Design Leader",
-    co: "Microsoft",
+    role: "Designed connected fitness experiences",
+    co: "Nike",
     note: "Enterprise product strategy",
   },
   {
-    year: "2024-Now",
-    role: "Founder",
-    co: "ProductOS / FoundrEvolved",
+    role: "Revolutionized aviation fleet management systems",
+    co: "Jeppesen, a Boeing company",
+    note: "Building the platform",
+  },
+  {
+    role: "Pioneered smart home energy monitoring",
+    co: "Schneider Electric",
+    note: "Building the platform",
+  },
+  {
+    role: "Led digital transformation for one of America's largest food retailers",
+    co: "Giant Eagle",
     note: "Building the platform",
   },
 ];
@@ -136,11 +139,8 @@ export default function AboutPage() {
               {timeline.map((t, i) => (
                 <div
                   key={i}
-                  className="py-4.5 border-b border-dark/8 grid grid-cols-[140px_1fr] sm:grid-cols-[140px_1fr_1fr] gap-4 items-center"
+                  className="py-4.5 border-b border-dark/8 grid grid-cols-1 sm:grid-cols-[1fr_1fr] gap-4 items-center"
                 >
-                  <span className="font-primary text-sm font-bold text-dark/30">
-                    {t.year}
-                  </span>
                   <div>
                     <span className="font-primary text-[15px] font-bold text-dark">
                       {t.role}
@@ -149,9 +149,9 @@ export default function AboutPage() {
                       {t.co}
                     </span>
                   </div>
-                  <span className="font-secondary text-sm text-[#57534E] hidden sm:block">
+                  {/* <span className="font-secondary text-sm text-[#57534E] hidden sm:block">
                     {t.note}
-                  </span>
+                  </span> */}
                 </div>
               ))}
             </div>
