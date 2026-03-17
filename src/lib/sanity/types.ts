@@ -19,6 +19,13 @@ export interface Post {
     };
   };
   body?: (PortableTextBlock | ImageBlock)[];
+  inlineAd?: InlineAd;
+}
+
+export interface InlineAd {
+  title: string;
+  description: string;
+  link: string;
 }
 
 export interface ImageBlock {

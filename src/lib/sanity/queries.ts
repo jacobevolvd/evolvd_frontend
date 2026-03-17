@@ -30,5 +30,17 @@ export const postBySlugQuery = `*[_type == "blog" && slug.current == $slug][0] {
   slug,
   publishedAt,
   banner,
-  body
+  body,
+  category->{title, slug},
+  inlineAd->{title, description, link}
+}`;
+
+export const relatedPostsQuery = `*[_type == "blog" && category->slug.current == $category && slug.current != $slug] | order(publishedAt desc) [0...3] {
+  _id,
+  title,
+  description,
+  slug,
+  publishedAt,
+  banner,
+  category->{title, slug}
 }`;
