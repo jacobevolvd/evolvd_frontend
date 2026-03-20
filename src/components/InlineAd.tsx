@@ -4,6 +4,7 @@ interface InlineAdProps {
   title?: string;
   description?: string;
   href?: string;
+  image?: { asset: { _ref: string; _type: "reference" } }; // ready to use — not rendered yet
 }
 
 export default function InlineAd({

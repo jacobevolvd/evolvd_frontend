@@ -7,6 +7,7 @@ interface NewsletterSignupProps {
   dark?: boolean;
   buttonText?: string;
   placeholder?: string;
+  onSuccess?: () => void;
 }
 
 export function SuccessPopup({ onClose }: { onClose: () => void }) {
@@ -38,6 +39,7 @@ export default function NewsletterSignup({
   dark = false,
   buttonText = "Join 1200+ product thinkers",
   placeholder = "Enter your email",
+  onSuccess,
 }: NewsletterSignupProps) {
   const [email, setEmail] = useState("");
   const [focused, setFocused] = useState(false);
@@ -83,6 +85,7 @@ export default function NewsletterSignup({
       router.push("/");
     } else {
       setStatus("idle");
+      onSuccess?.();
     }
   };
 

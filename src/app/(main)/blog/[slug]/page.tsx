@@ -11,6 +11,7 @@ import { Suspense } from "react";
 import InlineAd from "@/src/components/InlineAd";
 import NewsletterSignup from "@/src/components/NewsletterSignup";
 import RelatedPosts from "@/src/components/RelatedPosts";
+import NewsletterModal from "@/src/components/NewsletterModal";
 
 const portableTextComponents: PortableTextComponents = {
   types: {
@@ -133,6 +134,7 @@ export default async function BlogDetailPage({
                   title={post.inlineAd.title}
                   description={post.inlineAd.description}
                   href={post.inlineAd.link}
+                  image={post.inlineAd.image}
                 />
               )}
               <PortableText
@@ -170,6 +172,7 @@ export default async function BlogDetailPage({
         </Suspense>
       )}
 
+      <NewsletterModal />
       <Footer />
     </div>
   );
