@@ -85,7 +85,7 @@ export default async function BlogDetailPage({
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen w-full bg-white text-black font-primary">
+    <div className="min-h-screen w-full bg-white text-black font-secondary">
       <Header />
 
       <article className="px-8 mt-20 py-12 md:px-16 max-w-4xl mx-auto">

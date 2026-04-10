@@ -16,7 +16,7 @@
 
 @theme inline {
   --font-primary: "articulat-cf", sans-serif;
-  --font-secondary: "adobe-jenson-pro", serif;
+  --font-secondary: "minion-pro", serif;
 
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
@@ -30,7 +30,7 @@ html {
 
 body {
   font-family: var(--font-secondary);
-  background: var(--color-light);
+  background: var(--color-white);
   color: var(--color-dark);
   -webkit-font-smoothing: antialiased;
   line-height: 1.2;
@@ -59,4 +59,9 @@ body {
   height: 1.5px;
   background: var(--color-primary);
   display: inline-block;
+}
+
+/* Blog card styles */
+.blog-card-categories {
+  letter-spacing: -2%;
 }

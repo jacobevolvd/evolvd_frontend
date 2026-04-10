@@ -21,7 +21,7 @@ export default function BlogCard({ post }: { post: Post }) {
         <div className="p-5.5">
           <div className="flex gap-2.5 items-center mb-2.5">
             {post.category?.title && (
-              <span className="font-secondary text-sm font-bold text-primary tracking-[1.5px] uppercase">
+              <span className="font-secondary text-sm font-bold text-primary tracking-[1.5px] blog-card-categories">
                 {post.category.title}
               </span>
             )}
