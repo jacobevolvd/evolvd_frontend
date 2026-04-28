@@ -19,7 +19,10 @@ const footerColumns = {
   ],
 };
 
-const socials = ["LinkedIn", "Twitter / X"];
+const socials = [
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/productnatives" },
+  { label: "Twitter / X", href: "https://x.com/productnatives" },
+];
 
 export default function Footer() {
   return (
@@ -37,7 +40,7 @@ export default function Footer() {
                 Native
               </span>
             </div>
-            <p className="font-secondary text-sm text-[#57534E] leading-relaxed max-w-[200px]">
+            <p className="font-primary text-sm text-[#57534E] leading-relaxed max-w-[200px]">
               Frameworks, lessons, and community for the people who build
               products.
             </p>
@@ -46,7 +49,7 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(footerColumns).map(([category, links]) => (
             <div key={category}>
-              <div className="font-secondary text-sm font-bold text-dark tracking-widest uppercase mb-4">
+              <div className="font-primary text-sm font-bold text-dark tracking-widest uppercase mb-4">
                 {category}
               </div>
               <div className="flex flex-col gap-2.5">
@@ -54,7 +57,7 @@ export default function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="font-secondary text-sm text-[#57534E] hover:text-primary transition-colors"
+                    className="font-primary text-sm text-[#57534E] hover:text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -65,17 +68,19 @@ export default function Footer() {
 
           {/* Social column */}
           <div>
-            <div className="font-secondary text-sm font-bold text-dark tracking-widest uppercase mb-4">
+            <div className="font-primary text-sm font-bold text-dark tracking-widest uppercase mb-4">
               Social
             </div>
             <div className="flex flex-col gap-2.5">
               {socials.map((s) => (
                 <a
-                  key={s}
-                  href="#"
-                  className="font-secondary text-sm text-[#57534E] hover:text-primary transition-colors"
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-primary text-sm text-[#57534E] hover:text-primary transition-colors"
                 >
-                  {s}
+                  {s.label}
                 </a>
               ))}
             </div>
@@ -84,20 +89,20 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-dark/8 pt-5 flex flex-wrap justify-between gap-2.5">
-          <span className="font-secondary text-sm text-dark/35">
+          <span className="font-primary text-sm text-dark/35">
             &copy; {new Date().getFullYear()} ProductNative. Built by Arun
             Jacob.
           </span>
           <div className="flex gap-4.5">
             <Link
               href="/privacy"
-              className="font-secondary text-sm text-dark/35 hover:text-primary transition-colors"
+              className="font-primary text-sm text-dark/35 hover:text-primary transition-colors"
             >
               Privacy
             </Link>
             <Link
               href="/terms"
-              className="font-secondary text-sm text-dark/35 hover:text-primary transition-colors"
+              className="font-primary text-sm text-dark/35 hover:text-primary transition-colors"
             >
               Terms
             </Link>

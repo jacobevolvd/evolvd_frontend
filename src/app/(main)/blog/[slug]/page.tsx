@@ -90,13 +90,13 @@ export default async function BlogDetailPage({
 
       <article className="px-8 mt-20 py-12 md:px-16 max-w-4xl mx-auto">
         {/* Title & Date */}
-        <h1 className="text-3xl md:text-4xl font-bold leading-tight">
+        <h1 className="text-[2.5rem] font-black leading-tight font-primary w-[80%]">
           {post.title}
         </h1>
         {post.description && (
           <p className="mt-3 text-base">{post.description}</p>
         )}
-        <p className="text-sm text-gray-400 mt-2">
+        <p className="text-sm text-gray-400 mt-2 font-primary">
           {new Date(post.publishedAt).toLocaleDateString("en-US", {
             year: "numeric",
             month: "short",
@@ -124,7 +124,7 @@ export default async function BlogDetailPage({
           const firstHalf = post.body.slice(0, mid);
           const secondHalf = post.body.slice(mid);
           return (
-            <div className="mt-10 prose prose-gray max-w-none prose-blockquote:border-0 prose-blockquote:pl-0">
+            <div className="mt-10 prose prose-gray max-w-none prose-blockquote:border-0 prose-blockquote:pl-0 prose-p:font-medium prose-p:leading-[1.6rem] prose-h2:font-primary">
               <PortableText
                 value={firstHalf}
                 components={portableTextComponents}

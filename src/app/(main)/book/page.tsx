@@ -3,15 +3,39 @@ import Footer from "@/src/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 
-const chapters = [
-  "The Alignment Illusion",
-  "Why Smart Teams Ship Dumb Products",
-  "Vision Misalignment: Building the Wrong Thing Brilliantly",
-  "Execution Misalignment: The Handoff Graveyard",
-  "Market Misalignment: Solving Problems Nobody Has",
-  "The Alignment Audit: A Diagnostic Framework",
-  "Realigning Under Pressure",
-  "Building Alignment Into Your Culture",
+const parts = [
+  {
+    title: "Part 1: Users, Ego & Data",
+    chapters: [
+      "Awakening to the Great 'User-Centric Design' Lie",
+      "The Assumption Trap",
+    ],
+  },
+  {
+    title: "Part 2: The Stakeholders & Their Battles",
+    chapters: [
+      "The Stakeholders",
+      "Designers vs. Developers The Never-Ending Battle",
+      "Product Manager: The Role Between All Roles",
+      "When Executives & Clients Derail Product Strategy",
+    ],
+  },
+  {
+    title: "Part 3: Crisis, Chaos & Traps",
+    chapters: [
+      "The Collaboration Crisis",
+      "Common Product Building Traps",
+      "The Decision Chaos",
+    ],
+  },
+  {
+    title: "Part 4: Scaling Without Breaking",
+    chapters: [
+      "Think Beyond Your Job Title",
+      "The Ecosystem Mindset",
+      "The New Definition of a 'Great Product'",
+    ],
+  },
 ];
 
 const audiences = [
@@ -70,16 +94,20 @@ export default function BookPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
-                  href="#"
+                  href="https://mybook.to/MisAligned"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-7 py-3.5 bg-primary text-white font-secondary text-sm font-bold hover:bg-primary/85 transition-colors"
                 >
                   Buy the Book
                 </Link>
                 <Link
-                  href="#preview"
+                  href="https://books.google.co.in/books?id=NqCbEQAAQBAJ&lpg=PA1&pg=PA1#v=onepage&q&f=false"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-7 py-3.5 bg-transparent text-dark font-secondary text-sm font-bold border-[1.5px] border-dark/8 hover:border-primary transition-colors"
                 >
-                  Read 3 Free Chapters
+                  Read Free Chapters
                 </Link>
               </div>
             </div>
@@ -87,27 +115,43 @@ export default function BookPage() {
         </section>
 
         {/* Chapters */}
-        <section className="relative py-25 px-7">
-          <Image src="/book_2.avif" alt="" fill className="object-cover" />
-          <div className="absolute inset-0 bg-[#F2EDE6]/85" />
-          <div className="relative max-w-[700px] mx-auto">
+        <section className="py-25 px-7 bg-white">
+          <div className="max-w-[700px] mx-auto">
             <div className="section-label mb-4">Inside the Book</div>
-            <h2 className="font-primary text-[32px] font-extrabold text-dark tracking-[-1px] mb-9">
-              8 Chapters. Zero filler.
+            <h2 className="font-primary text-[32px] font-extrabold text-dark tracking-[-1px] mb-12">
+              Table of Contents
             </h2>
-            {chapters.map((ch, i) => (
-              <div
-                key={i}
-                className="py-4.5 border-b border-dark/8 flex items-center gap-4.5"
-              >
-                <span className="font-primary text-sm font-bold text-dark/30 min-w-[28px]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="font-primary text-[17px] font-bold text-dark">
-                  {ch}
-                </span>
+            <p className="font-primary text-lg font-semibold text-dark/70 mb-10">
+              Introduction: The Most Organized Chaos
+            </p>
+            {parts.map((part, pi) => (
+              <div key={pi} className="mb-10">
+                <h3 className="font-primary text-xl font-extrabold text-dark mb-5 pt-6 border-t border-dark/8">
+                  {part.title}
+                </h3>
+                {part.chapters.map((ch, ci) => {
+                  const globalIndex = parts.slice(0, pi).reduce((acc, p) => acc + p.chapters.length, 0) + ci + 1;
+                  return (
+                    <div
+                      key={ci}
+                      className="py-3.5"
+                    >
+                      <span className="font-primary text-[17px] font-medium text-dark/70">
+                        Chapter {globalIndex}: {ch}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             ))}
+            <Link
+              href="https://books.google.co.in/books?id=NqCbEQAAQBAJ&lpg=PA1&pg=PT4#v=onepage&q&f=false"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-4 px-7 py-3.5 bg-primary text-white font-secondary text-sm font-bold hover:bg-primary/85 transition-colors"
+            >
+              Read Free Chapters
+            </Link>
           </div>
         </section>
 
@@ -118,11 +162,11 @@ export default function BookPage() {
             <h2 className="font-primary text-[32px] font-extrabold text-dark tracking-[-1px] mb-9">
               This book is for you if...
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="border border-dark/8 bg-white divide-y divide-dark/8">
               {audiences.map((txt, i) => (
                 <div
                   key={i}
-                  className="p-6 border border-dark/8 bg-white flex gap-3.5 items-start"
+                  className="p-6 flex gap-3.5 items-start"
                 >
                   <span className="text-primary font-primary font-extrabold text-lg leading-none">
                     ✓
