@@ -9,6 +9,7 @@ export interface Post {
   _id: string;
   title: string;
   description?: string;
+  excerpt?: string;
   slug: { current: string };
   publishedAt: string;
   category?: Category;

@@ -3,7 +3,7 @@ import NewsletterSignup from "@/src/components/NewsletterSignup";
 
 export default function HeroSection() {
   return (
-    <section className="pt-[180px] pb-28 bg-light relative overflow-hidden px-7">
+    <section className="pt-[180px] pb-28 bg-white relative overflow-hidden px-7">
       <div className="max-w-[780px] mx-auto relative text-center">
         <div className="font-primary text-sm font-[300] tracking-[2.5px] uppercase text-primary mb-7">
           FOR PMS, DESIGNERS, FOUNDERS, ENGINEERS &amp; GTM
