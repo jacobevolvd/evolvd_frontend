@@ -1,6 +1,23 @@
+import type { Metadata } from "next";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Tools — Recommended Resources for Product Builders",
+  description:
+    "The exact tools, software, and resources Arun Jacob recommends for founders, product managers, and designers. Curated for building better products.",
+  alternates: {
+    canonical: "/tools",
+  },
+  openGraph: {
+    title: "Tools & Resources | ProductNatives",
+    description:
+      "Curated tools and resources for founders, product managers, and designers building great products.",
+    url: "/tools",
+    type: "website",
+  },
+};
 
 const frameworks = [
   { category: "Frameworks", title: "Modern UI Kit", slug: "modern-ui-kit" },

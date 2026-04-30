@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1c1917"/>
+
+  <!-- Subtle radial glow left -->
+  <radialGradient id="glowLeft" cx="20%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#c84b31" stop-opacity="0.08"/>
+    <stop offset="100%" stop-color="#c84b31" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#glowLeft)"/>
+
+  <!-- Subtle radial glow right -->
+  <radialGradient id="glowRight" cx="80%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#2d1b69" stop-opacity="0.12"/>
+    <stop offset="100%" stop-color="#2d1b69" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#glowRight)"/>
+
+  <!-- Logo mark box -->
+  <rect x="525" y="130" width="150" height="150" rx="24" fill="#c84b31"/>
+
+  <!-- PN text in logo box -->
+  <text
+    x="600"
+    y="232"
+    text-anchor="middle"
+    font-size="72"
+    font-weight="900"
+    font-family="Arial, sans-serif"
+    fill="#ffffff"
+    letter-spacing="-3"
+  >PN</text>
+
+  <!-- Brand name -->
+  <text
+    x="600"
+    y="350"
+    text-anchor="middle"
+    font-size="64"
+    font-weight="800"
+    font-family="Arial, sans-serif"
+    fill="#fafaf7"
+    letter-spacing="-2"
+  >ProductNatives</text>
+
+  <!-- Tagline -->
+  <text
+    x="600"
+    y="405"
+    text-anchor="middle"
+    font-size="22"
+    font-weight="400"
+    font-family="Arial, sans-serif"
+    fill="#a8a29e"
+    letter-spacing="0.5"
+  >Build Products People Actually Need</text>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="626" width="1200" height="4" fill="#c84b31"/>
+</svg>

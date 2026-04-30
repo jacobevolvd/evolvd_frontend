@@ -1,5 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import SubscribeForm from "@/src/components/SubscribeForm";
+
+export const metadata: Metadata = {
+  title: "Subscribe — Weekly Product Insights",
+  description:
+    "Join 1,200+ founders, PMs, and designers who get one practical product lesson every week. Real frameworks. No fluff. Unsubscribe anytime.",
+  alternates: {
+    canonical: "/subscribe",
+  },
+  openGraph: {
+    title: "Subscribe to ProductNatives Newsletter",
+    description:
+      "Join 1,200+ founders, PMs, and designers who get one practical product lesson every week. Real frameworks. No fluff.",
+    url: "/subscribe",
+    type: "website",
+  },
+};
 
 const benefits = [
   {

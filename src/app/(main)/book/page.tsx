@@ -1,7 +1,25 @@
+import type { Metadata } from "next";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "MisAligned — The Book by Arun Jacob",
+  description:
+    "A book for product builders who are tired of building the wrong thing. MisAligned reveals why talented teams fail and how to build products that actually matter.",
+  alternates: {
+    canonical: "/book",
+  },
+  openGraph: {
+    title: "MisAligned — The Book by Arun Jacob | ProductNatives",
+    description:
+      "A book for product builders who are tired of building the wrong thing. Learn the frameworks behind 20 years of product experience.",
+    url: "/book",
+    type: "book",
+    images: [{ url: "/book/book.png", width: 800, height: 1000, alt: "MisAligned book by Arun Jacob" }],
+  },
+};
 
 const chapters = [
   "The Alignment Illusion",
@@ -30,7 +48,7 @@ export default function BookPage() {
         {/* Hero */}
         <section className="relative pt-15 pb-25 px-7">
           <Image
-            src="/book_1.avif"
+            src="/book/book_1.avif"
             alt=""
             fill
             className="object-cover"
@@ -41,7 +59,7 @@ export default function BookPage() {
             {/* Book cover */}
             <div className="relative flex-none w-[420px] h-[400px] ">
               <Image
-                src="/book.png"
+                src="/book/book.png"
                 alt="MisAligned Book Cover"
                 fill
                 className="object-cover"
@@ -88,7 +106,7 @@ export default function BookPage() {
 
         {/* Chapters */}
         <section className="relative py-25 px-7">
-          <Image src="/book_2.avif" alt="" fill className="object-cover" />
+          <Image src="/book/book_2.avif" alt="" fill className="object-cover" />
           <div className="absolute inset-0 bg-[#F2EDE6]/85" />
           <div className="relative max-w-[700px] mx-auto">
             <div className="section-label mb-4">Inside the Book</div>

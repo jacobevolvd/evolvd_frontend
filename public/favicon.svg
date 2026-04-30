@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="#1c1917"/>
+
+  <!-- PN monogram -->
+  <text
+    x="256"
+    y="340"
+    text-anchor="middle"
+    font-size="240"
+    font-weight="900"
+    font-family="Arial, sans-serif"
+    fill="#c84b31"
+    letter-spacing="-10"
+  >PN</text>
+
+  <!-- Bottom accent -->
+  <rect x="0" y="488" width="512" height="24" rx="8" fill="#c84b31"/>
+</svg>

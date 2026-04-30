@@ -1,8 +1,26 @@
+import type { Metadata } from "next";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import NewsletterSignup from "@/src/components/NewsletterSignup";
+
+export const metadata: Metadata = {
+  title: "About Arun Jacob",
+  description:
+    "20 years of building products at Adobe, Microsoft, Nike, Boeing, and Freshworks. Learn about the person behind ProductNatives and the mission to help founders build products people actually need.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Arun Jacob | ProductNatives",
+    description:
+      "20 years of building products at Adobe, Microsoft, Nike, Boeing, and Freshworks. The person behind ProductNatives.",
+    url: "/about",
+    type: "profile",
+    images: [{ url: "/arun/headshot.jpg", width: 800, height: 1000, alt: "Arun Jacob" }],
+  },
+};
 
 const timeline = [
   {
@@ -78,7 +96,7 @@ export default function AboutPage() {
                 }}
               >
                 <Image
-                  src="/arun_2.jpg"
+                  src="/arun/arun_2.jpg"
                   alt="Arun Jacob"
                   fill
                   className="object-cover"

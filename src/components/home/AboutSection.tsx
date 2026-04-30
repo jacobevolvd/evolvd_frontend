@@ -21,7 +21,7 @@ export default function AboutSection() {
         {/* Photo */}
         <div className="relative flex-none w-[280px] h-[350px]">
           <Image
-            src="/arun_1.avif"
+            src="/arun/arun_1.avif"
             alt="Arun Jacob"
             fill
             className="object-cover"
