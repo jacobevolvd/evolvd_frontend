@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import Link from "next/link";
@@ -10,6 +11,22 @@ import {
 import type { Post, Category } from "@/src/lib/sanity/types";
 import FilterTabs from "@/src/components/FilterTabs";
 import BlogCard from "@/src/components/BlogCard";
+
+export const metadata: Metadata = {
+  title: "Blog — Product Insights & Frameworks",
+  description:
+    "Weekly essays on building products people actually need. Practical frameworks, real lessons, and honest takes from 20 years of product experience.",
+  alternates: {
+    canonical: "/blog",
+  },
+  openGraph: {
+    title: "Blog — Product Insights & Frameworks | ProductNatives",
+    description:
+      "Weekly essays on building products people actually need. Practical frameworks, real lessons, and honest takes.",
+    url: "/blog",
+    type: "website",
+  },
+};
 
 export default async function BlogPage({
   searchParams,

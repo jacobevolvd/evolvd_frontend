@@ -1,6 +1,23 @@
+import type { Metadata } from "next";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import FilterTabs from "@/src/components/FilterTabs";
+
+export const metadata: Metadata = {
+  title: "The Vault — Frameworks & Workbooks for Product Builders",
+  description:
+    "A curated library of product frameworks, workbooks, and templates from Arun Jacob. Everything you need to go from 0 to 1 and build products that actually matter.",
+  alternates: {
+    canonical: "/vault",
+  },
+  openGraph: {
+    title: "The Vault — Frameworks & Workbooks | ProductNatives",
+    description:
+      "A curated library of product frameworks, workbooks, and templates. Everything you need to build products that actually matter.",
+    url: "/vault",
+    type: "website",
+  },
+};
 
 const resources = [
   {

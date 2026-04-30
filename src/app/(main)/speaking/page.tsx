@@ -1,6 +1,23 @@
+import type { Metadata } from "next";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Speaking — Arun Jacob",
+  description:
+    "Invite Arun Jacob to speak at your event. Topics include product strategy, 0-to-1 product development, building aligned teams, and lessons from 20 years at Adobe, Microsoft, Nike, and Boeing.",
+  alternates: {
+    canonical: "/speaking",
+  },
+  openGraph: {
+    title: "Speaking — Arun Jacob | ProductNatives",
+    description:
+      "Invite Arun Jacob to speak at your event on product strategy, 0-to-1 development, and building aligned teams.",
+    url: "/speaking",
+    type: "website",
+  },
+};
 
 const topics = [
   {
@@ -41,7 +58,7 @@ export default function SpeakingPage() {
         {/* Header */}
         <section className="relative min-h-screen flex items-center px-7">
           <Image
-            src="/arun_3.jpg"
+            src="/arun/arun_3.jpg"
             alt=""
             fill
             className="object-cover"

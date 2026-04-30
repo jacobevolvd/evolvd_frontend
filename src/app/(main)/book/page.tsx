@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import Link from "next/link";
@@ -36,6 +37,33 @@ const parts = [
       "The New Definition of a 'Great Product'",
     ],
   },
+  ]
+export const metadata: Metadata = {
+  title: "MisAligned — The Book by Arun Jacob",
+  description:
+    "A book for product builders who are tired of building the wrong thing. MisAligned reveals why talented teams fail and how to build products that actually matter.",
+  alternates: {
+    canonical: "/book",
+  },
+  openGraph: {
+    title: "MisAligned — The Book by Arun Jacob | ProductNatives",
+    description:
+      "A book for product builders who are tired of building the wrong thing. Learn the frameworks behind 20 years of product experience.",
+    url: "/book",
+    type: "book",
+    images: [{ url: "/book/book.png", width: 800, height: 1000, alt: "MisAligned book by Arun Jacob" }],
+  },
+};
+
+const chapters = [
+  "The Alignment Illusion",
+  "Why Smart Teams Ship Dumb Products",
+  "Vision Misalignment: Building the Wrong Thing Brilliantly",
+  "Execution Misalignment: The Handoff Graveyard",
+  "Market Misalignment: Solving Problems Nobody Has",
+  "The Alignment Audit: A Diagnostic Framework",
+  "Realigning Under Pressure",
+  "Building Alignment Into Your Culture",
 ];
 
 const audiences = [
@@ -54,7 +82,7 @@ export default function BookPage() {
         {/* Hero */}
         <section className="relative pt-15 pb-25 px-7">
           <Image
-            src="/book_1.avif"
+            src="/book/book_1.avif"
             alt=""
             fill
             className="object-cover"
@@ -65,7 +93,7 @@ export default function BookPage() {
             {/* Book cover */}
             <div className="relative flex-none w-[420px] h-[400px] ">
               <Image
-                src="/book.png"
+                src="/book/book.png"
                 alt="MisAligned Book Cover"
                 fill
                 className="object-cover"

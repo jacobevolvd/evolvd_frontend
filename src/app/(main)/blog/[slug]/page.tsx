@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/src/components/Header";
 import Footer from "@/src/components/Footer";
 import Image from "next/image";
@@ -12,6 +13,46 @@ import InlineAd from "@/src/components/InlineAd";
 import NewsletterSignup from "@/src/components/NewsletterSignup";
 import RelatedPosts from "@/src/components/RelatedPosts";
 import NewsletterModal from "@/src/components/NewsletterModal";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://productnatives.com";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const { data: post } = await sanityFetch({ query: postBySlugQuery, params: { slug } }) as { data: Post | null };
+
+  if (!post) return {};
+
+  const ogImage = post.banner
+    ? urlFor(post.banner).width(1200).height(630).url()
+    : undefined;
+
+  return {
+    title: post.title,
+    description: post.description ?? undefined,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+    openGraph: {
+      title: post.title,
+      description: post.description ?? undefined,
+      url: `/blog/${slug}`,
+      type: "article",
+      publishedTime: post.publishedAt,
+      authors: ["Arun Jacob"],
+      images: ogImage ? [{ url: ogImage, width: 1200, height: 630, alt: post.title }] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description ?? undefined,
+      images: ogImage ? [ogImage] : [],
+    },
+  };
+}
 
 const portableTextComponents: PortableTextComponents = {
   types: {
@@ -84,8 +125,36 @@ export default async function BlogDetailPage({
 
   if (!post) notFound();
 
+  const ogImage = post.banner
+    ? urlFor(post.banner).width(1200).height(630).url()
+    : null;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.description ?? "",
+    url: `${siteUrl}/blog/${slug}`,
+    datePublished: post.publishedAt,
+    author: {
+      "@type": "Person",
+      name: "Arun Jacob",
+      url: `${siteUrl}/about`,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "ProductNatives",
+      url: siteUrl,
+    },
+    ...(ogImage && { image: ogImage }),
+  };
+
   return (
     <div className="min-h-screen w-full bg-white text-black font-secondary">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <article className="px-8 mt-20 py-12 md:px-16 max-w-4xl mx-auto">
