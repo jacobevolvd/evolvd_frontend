@@ -72,7 +72,7 @@ const timeline = [
 
 const socials = [
   { name: "LinkedIn", url: "https://www.linkedin.com/in/arunjacobk/" },
-  { name: "Twitter / X", url: "https://x.com/arunjacob" },
+  { name: "Twitter / X", url: "https://x.com/productnatives" },
 ];
 
 export default function AboutPage() {

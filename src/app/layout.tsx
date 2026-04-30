@@ -104,6 +104,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        {/* Adobe fonts code here */}
         <link rel="stylesheet" href="https://use.typekit.net/xln2vhb.css" />
         <script
           type="application/ld+json"
