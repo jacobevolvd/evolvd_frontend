@@ -16,7 +16,7 @@
 
 @theme inline {
   --font-primary: "articulat-cf", sans-serif;
-  --font-secondary: "minion-pro", serif;
+  --font-secondary: var(--font-newsreader), "Newsreader", serif;
 
   --color-primary: var(--color-primary);
   --color-secondary: var(--color-secondary);
@@ -47,7 +47,7 @@ body {
   font-weight: 700;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--color-primary);
+  color: color-mix(in srgb, var(--color-dark) 55%, transparent);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -57,13 +57,16 @@ body {
   content: "";
   width: 24px;
   height: 1.5px;
-  background: var(--color-primary);
+  background: color-mix(in srgb, var(--color-dark) 55%, transparent);
   display: inline-block;
 }
 
-/* Global paragraph weight */
-p {
-  font-weight: 500 !important;
+/* Global paragraph styles */
+@layer base {
+  p {
+    font-weight: 400 !important;
+    line-height: 1.5rem !important;
+  }
 }
 
 /* Blog card styles */

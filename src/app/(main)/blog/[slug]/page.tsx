@@ -165,13 +165,17 @@ export default async function BlogDetailPage({
         {post.description && (
           <p className="mt-3 text-base">{post.description}</p>
         )}
-        <p className="text-sm text-gray-400 mt-2 font-primary">
-          {new Date(post.publishedAt).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-          })}
-        </p>
+        <div className="flex items-center gap-2 text-sm text-gray-400 mt-2 font-primary">
+          <span className="font-semibold text-dark/70">By Arun Jacob</span>
+          <span>·</span>
+          <span>
+            {new Date(post.publishedAt).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          </span>
+        </div>
 
         {/* Hero Image */}
         {post.banner ? (

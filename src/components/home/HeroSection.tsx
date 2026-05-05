@@ -29,12 +29,12 @@ export default function HeroSection() {
           Free weekly newsletter. No spam. Unsubscribe anytime.
         </p>
 
-        <Link
+        {/* <Link
           href="/vault"
           className="font-secondary text-sm font-semibold text-secondary border-b-[1.5px] border-secondary/30 pb-0.5 hover:border-secondary transition-colors"
         >
           Or explore free frameworks and resources &#8599;
-        </Link>
+        </Link> */}
       </div>
     </section>
   );

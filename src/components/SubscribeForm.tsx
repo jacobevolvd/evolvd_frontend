@@ -162,7 +162,7 @@ export default function SubscribeForm() {
       <button
         onClick={handleSubmit}
         disabled={status === "loading"}
-        className="w-full py-4 bg-primary text-white font-secondary text-[15px] font-bold tracking-wide hover:bg-primary/85 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(200,75,49,0.12)] transition-all cursor-pointer disabled:opacity-60"
+        className="w-full py-4 bg-primary text-white font-primary text-[15px] font-bold tracking-wide hover:bg-primary/85 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(200,75,49,0.12)] transition-all cursor-pointer disabled:opacity-60"
       >
         {status === "loading" ? "Subscribing..." : "Subscribe \u2192"}
       </button>

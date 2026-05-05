@@ -141,7 +141,7 @@ export default function SpeakingPage() {
               </p>
               <a
                 href="mailto:speaking@founderevolved.com"
-                className="inline-block px-7 py-3.5 bg-primary text-white font-secondary text-sm font-bold hover:bg-primary/85 transition-colors"
+                className="inline-block px-7 py-3.5 bg-primary text-white font-primary text-sm font-bold hover:bg-primary/85 transition-colors"
               >
                 Get in Touch
               </a>
