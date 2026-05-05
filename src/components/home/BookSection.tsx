@@ -11,9 +11,9 @@ export default function BookSection() {
           <h2 className="font-primary text-[clamp(32px,5vw,50px)] font-extrabold text-dark leading-[1.05] tracking-[-1.5px] mb-2">
             MisAligned
           </h2>
-          <p className="font-secondary text-lg text-[#57534E] leading-snug mb-5">
+          <h3 className="font-primary text-lg font-semibold text-[#57534E] leading-snug mb-5">
             Finding the Missing Link Between Smart Teams and Successful Products
-          </p>
+          </h3>
           <p className="font-secondary text-base text-[#57534E] leading-relaxed mb-8">
             The gap between a great team and a great product isn't talent. It's
             alignment. This book is about what that gap looks like in the real
@@ -22,13 +22,13 @@ export default function BookSection() {
           <div className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/book"
-              className="px-6.5 py-3.5 bg-secondary text-white font-secondary text-sm font-bold hover:bg-secondary/85 transition-colors"
+              className="px-6.5 py-3.5 bg-primary text-white font-primary text-sm font-bold hover:bg-primary/85 transition-colors"
             >
               Get the Book
             </Link>
             <Link
               href="/book#preview"
-              className="px-6.5 py-3.5 bg-transparent text-secondary font-secondary text-sm font-bold border-[1.5px] border-secondary/20 hover:border-secondary transition-colors"
+              className="px-6.5 py-3.5 bg-transparent text-dark font-primary text-sm font-bold border-[1.5px] border-dark/8 hover:border-primary transition-colors"
             >
               Read Free Chapters
             </Link>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -33,13 +34,15 @@ export default function Header() {
     >
       <div className="max-w-[1100px] mx-auto flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-baseline">
-          <span className="font-primary text-xl font-extrabold text-dark tracking-tight">
-            Product
-          </span>
-          <span className="font-primary text-xl font-extrabold text-primary tracking-tight">
-            Native
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/ProductNativeLogo.svg"
+            alt="ProductNatives"
+            width={180}
+            height={30}
+            priority
+            className="h-6 w-auto"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -48,7 +51,7 @@ export default function Header() {
             <Link
               key={link.label}
               href={link.href}
-              className={`font-primary text-sm font-medium transition-colors hover:text-primary tracking-[.02rem] ${
+              className={`font-primary text-sm font-semibold transition-colors hover:text-primary tracking-[.02rem] ${
                 pathname.startsWith(link.href)
                   ? "text-primary"
                   : "text-[#57534E]"
@@ -97,7 +100,7 @@ export default function Header() {
             <Link
               key={link.label}
               href={link.href}
-              className={`font-secondary text-sm transition-colors hover:text-primary ${
+              className={`font-primary text-sm font-semibold transition-colors hover:text-primary ${
                 pathname.startsWith(link.href)
                   ? "text-primary"
                   : "text-[#57534E]"
@@ -109,7 +112,7 @@ export default function Header() {
           ))}
           <Link
             href="#subscribe"
-            className="font-secondary text-sm font-bold text-white bg-primary px-5 py-2.5 text-center hover:bg-primary/85 transition-colors"
+            className="font-primary text-sm font-bold text-white bg-primary px-5 py-2.5 text-center hover:bg-primary/85 transition-colors"
             onClick={() => setMobileOpen(false)}
           >
             Subscribe

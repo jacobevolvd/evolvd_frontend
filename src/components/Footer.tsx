@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerColumns = {
   Content: [
@@ -32,13 +33,14 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-[1.6fr_repeat(3,1fr)_0.8fr] gap-9 mb-14">
           {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-baseline mb-3.5">
-              <span className="font-primary text-lg font-extrabold text-dark">
-                Product
-              </span>
-              <span className="font-primary text-lg font-extrabold text-primary">
-                Native
-              </span>
+            <div className="mb-3.5">
+              <Image
+                src="/ProductNativeLogo.svg"
+                alt="ProductNatives"
+                width={180}
+                height={30}
+                className="h-6 w-auto"
+              />
             </div>
             <p className="font-primary text-sm text-[#57534E] leading-relaxed max-w-[200px]">
               Frameworks, lessons, and community for the people who build
@@ -90,7 +92,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-dark/8 pt-5 flex flex-wrap justify-between gap-2.5">
           <span className="font-primary text-sm text-dark/35">
-            &copy; {new Date().getFullYear()} ProductNative. Built by Arun
+            &copy; {new Date().getFullYear()} ProductNatives. Built by Arun
             Jacob.
           </span>
           <div className="flex gap-4.5">

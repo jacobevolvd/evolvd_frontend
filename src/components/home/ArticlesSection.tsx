@@ -21,7 +21,7 @@ export default async function ArticlesSection() {
           </div>
           <Link
             href="/blog"
-            className="font-secondary text-sm font-bold text-primary"
+            className="font-primary text-sm font-bold text-primary"
           >
             View all &rarr;
           </Link>

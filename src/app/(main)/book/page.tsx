@@ -106,10 +106,10 @@ export default function BookPage() {
               <h1 className="font-primary text-[clamp(36px,5vw,52px)] font-extrabold text-dark tracking-[-2px] leading-none mb-2.5">
                 MisAligned
               </h1>
-              <p className="font-secondary text-lg text-[#57534E] leading-snug mb-6">
+              <h3 className="font-primary text-lg font-semibold text-[#57534E] leading-snug mb-6">
                 Finding the Missing Link Between Smart Teams and Successful
                 Products
-              </p>
+              </h3>
               <p className="font-secondary text-base text-[#57534E] leading-relaxed mb-4">
                 Why do talented teams still ship products nobody wants? After 20
                 years watching brilliant people fail at building the right
@@ -125,7 +125,7 @@ export default function BookPage() {
                   href="https://mybook.to/MisAligned"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-7 py-3.5 bg-primary text-white font-secondary text-sm font-bold hover:bg-primary/85 transition-colors"
+                  className="px-7 py-3.5 bg-primary text-white font-primary text-sm font-bold hover:bg-primary/85 transition-colors"
                 >
                   Buy the Book
                 </Link>
@@ -133,7 +133,7 @@ export default function BookPage() {
                   href="https://books.google.co.in/books?id=NqCbEQAAQBAJ&lpg=PA1&pg=PA1#v=onepage&q&f=false"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-7 py-3.5 bg-transparent text-dark font-secondary text-sm font-bold border-[1.5px] border-dark/8 hover:border-primary transition-colors"
+                  className="px-7 py-3.5 bg-transparent text-dark font-primary text-sm font-bold border-[1.5px] border-dark/8 hover:border-primary transition-colors"
                 >
                   Read Free Chapters
                 </Link>
@@ -176,7 +176,7 @@ export default function BookPage() {
               href="https://books.google.co.in/books?id=NqCbEQAAQBAJ&lpg=PA1&pg=PT4#v=onepage&q&f=false"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-4 px-7 py-3.5 bg-primary text-white font-secondary text-sm font-bold hover:bg-primary/85 transition-colors"
+              className="inline-block mt-4 px-7 py-3.5 bg-primary text-white font-primary text-sm font-bold hover:bg-primary/85 transition-colors"
             >
               Read Free Chapters
             </Link>
