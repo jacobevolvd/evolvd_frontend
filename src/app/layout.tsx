@@ -57,9 +57,9 @@ export const metadata: Metadata = {
       "Frameworks, lessons, and community for the people who build products. Weekly insights from Arun Jacob.",
     images: [
       {
-        url: "/og-default.svg",
-        width: 1200,
-        height: 630,
+        url: "/ProductNativeLogo.svg",
+        width: 218,
+        height: 30,
         alt: "ProductNatives — Build Products People Actually Need",
       },
     ],
@@ -71,12 +71,12 @@ export const metadata: Metadata = {
     title: "ProductNatives — Build Products People Actually Need",
     description:
       "Frameworks, lessons, and community for the people who build products. Weekly insights from Arun Jacob.",
-    images: ["/og-default.svg"],
+    images: ["/ProductNativeLogo.svg"],
   },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
     ],
     shortcut: "/favicon.ico",
     apple: [{ url: "/apple-touch-icon.png", sizes: "192x192" }],
